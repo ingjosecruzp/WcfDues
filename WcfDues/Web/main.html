@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html ng-app="myApp" ng-controller="MainControllers">
+<head>
+	<title></title>
+	<!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-animate.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-sanitize.js"></script>
+	<script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.5.0.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>-->
+
+	<script src="lib/angular.js"></script>
+	<script src="lib/angular-animate.js"></script>
+	<script src="lib/angular-sanitize.js"></script>
+	<script src="lib/ui-bootstrap-tpls-2.5.0.min.js"></script>
+	<script src="lib/angular-route.js"></script>
+
+	<script src="app.js"></script>
+
+	<!-- Controladores -->
+	<script src="Controllers/MainController.js"></script>
+	<script src="Controllers/ClientesControllers.js"></script>
+	<script src="Controllers/UsuariosControllers.js"></script>
+
+	<link href="//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+	<nav class="navbar navbar-default" role="navigation" ng-click="Llamar()">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" ng-click="isNavCollapsed = !isNavCollapsed">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="#">Inicio</a>
+		</div>
+		<div class="collapse navbar-collapse" uib-collapse="isNavCollapsed">
+			<ul class="nav navbar-nav">
+				<li><a href="#!clientes">Clientes</a></li>
+				<li><a href="#!usuarios">Usuarios</a></li>
+			</ul>
+		</div>
+	</nav>
+	<div class="container" ng-view>
+</body>
+</html>

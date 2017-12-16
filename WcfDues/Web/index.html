@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<script src="lib/angular.js"></script>
+<head>
+	<title>{{firstName}}</title>
+</head>
+<body>
+    <div ng-app="myApp" ng-controller="myCtrl" ng-init="firstName='Paredes'">
+    	<p>Nombre: <input type="text" ng-model="name"></p>
+    	<p ng-bind="name"></p>
+    	<p ng-bind="firstName"></p>
+    	<p>Apellido : {{ firstName | uppercase  }}</p>
+    	<p>Expresion : <!-- Comentario --> {{ 5 + 5 | currency }}</p>
+    	<p>Nombre Completo : {{ name + " " + firstName}}</p>
+    	<p><input type="text" style="background-color:{{myColor}}" name="" value="{{myColor}}" ng-model="myColor"></p>
+     </div>
+</body>
+</html>
+<script>
+	var app=angular.module('myApp',[])
+
+	app.controller('myCtrl',function($scope){
+		$scope.name="Jose";
+		$scope.myColor="Red";
+	})
+</script>

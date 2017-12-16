@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>\\192.168.1.47\wwwroot\WcfDues</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>02/03/2015 09:32:26</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.SqlServer.dll">
+      <publishTime>02/03/2015 09:32:26</publishTime>
+    </File>
+    <File Include="bin/JWT.dll">
+      <publishTime>05/15/2015 10:15:52</publishTime>
+    </File>
+    <File Include="bin/MySql.Data.dll">
+      <publishTime>06/17/2016 18:29:10</publishTime>
+    </File>
+    <File Include="bin/MySql.Data.Entity.EF6.dll">
+      <publishTime>06/17/2016 18:29:12</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>06/18/2017 13:57:10</publishTime>
+    </File>
+    <File Include="bin/WcfDues.dll">
+      <publishTime>11/07/2017 18:49:50</publishTime>
+    </File>
+    <File Include="Empresa.edmx.diagram">
+      <publishTime>09/26/2017 12:53:12</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>09/26/2017 12:44:47</publishTime>
+    </File>
+    <File Include="Sap.edmx.diagram">
+      <publishTime>10/16/2017 15:09:02</publishTime>
+    </File>
+    <File Include="Service1.svc">
+      <publishTime>08/08/2017 17:24:48</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>07/11/2017 17:48:45</publishTime>
+    </File>
+    <File Include="WSArticulos.svc">
+      <publishTime>07/10/2017 12:09:52</publishTime>
+    </File>
+    <File Include="WSColonias.svc">
+      <publishTime>08/23/2017 17:33:56</publishTime>
+    </File>
+    <File Include="WSUsuarios.svc">
+      <publishTime>09/25/2017 17:14:16</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

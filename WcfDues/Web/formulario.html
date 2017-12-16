@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<style>
+table, th , td {
+  border: 1px solid grey;
+  border-collapse: collapse;
+  padding: 5px;
+}
+table tr:nth-child(odd) {
+  background-color: #f1f1f1;
+}
+table tr:nth-child(even) {
+  background-color: #ffffff;
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<head>
+	<title>Formulario</title>
+</head>
+<body>
+	<div ng-app="myApp" ng-controller="FormularioController" ng-init="init()">
+		<form id="FrmRegistro" name="FrmRegristro" ng-show="VerFormulario">
+			<p>
+				<label>Id:</label>
+			</p>
+			<p>
+				<input type="text" name="Id" id="Id" ng-model="Cliente.Id" ng-disabled="true">
+			</p>
+			<p>
+				<label>Nombre:</label>
+			</p>
+			<p>
+				<input type="text" name="Nombre" id="Nombre" ng-model="Cliente.Nombre" required>
+			</p>
+			<p>
+				<label>Telefono:</label>
+			</p>
+			<p>
+				<input type="text" name="Telefono" id="Telefono" ng-model="Cliente.Telefono" required>
+			</p>
+			<p>
+				<label>Celular:</label>
+			</p>
+			<p>
+				<input type="text" name="Celular" id="Celular" ng-model="Cliente.Celular">
+			</p>
+			<p>
+				<label>RFC:</label>
+			</p>
+			<p>
+				<input type="text" name="RFC" id="RFC" ng-model="Cliente.RFC">
+			</p>
+			<p>
+				<label>Colonia:</label>
+			</p>
+			<p>
+				<select id="colonia" name="colonia" ng-model="Cliente.ColoniaId" ng-options="Colonia.Id as Colonia.Nombre for Colonia in Colonias"></select>
+			</p>
+			<p>
+				<button type="button" ng-click="Registrar()" ng-disabled="FrmRegistro.$invalid">
+					Guardar
+				</button>
+				<button type="button" ng-click="VerJSON()" ng-disabled="FrmRegistro.$invalid">
+					JSON
+				</button>
+			</p>
+		</form>
+		<p>
+			<button type="button" ng-click="VerFormulario=!VerFormulario">
+				Ver Formulario
+			</button>
+		</p>
+		<p>
+			<table>
+				<tr ng-repeat="cliente in Clientes | orderBy : 'Nombre'" ng-click="Mostrar(cliente)">
+					<td> {{ $index + 1 }} </td>
+					<td> {{ cliente.Nombre }}</td>
+					<td> {{ cliente.Telefono }}</td>
+					<td> {{ cliente.Celular }}</td>
+					<td> {{ cliente.RFC }}</td>
+					<td> {{ cliente.colonias.Nombre | uppercase }}</td>
+				</tr>
+			</table>
+		</p>
+	</div>
+</body>
+</html>
+<script>
+	var app=angular.module('myApp',[])
+
+	app.controller('FormularioController', ['$scope','$http',function($scope,$http){
+		$scope.Colonias=[];
+		$scope.Clientes=[];
+		$scope.VerFormulario=false;
+
+		$scope.Registrar=function(){
+			var data=$scope.Cliente;
+
+			console.log(data.Id);
+			var accion= (data.Id==undefined || data.Id==0) ? "addCliente" : "updateCliente";
+
+			$http({
+				method : "POST",
+				data :'{"Cliente":' + JSON.stringify(data) + '}',
+				url: "http://localhost:51475/Service1.svc/" + accion
+			}).then(function mySucess(response){
+				console.log("Peticion con exito");
+				console.log(response);
+				$scope.Cliente={};
+				//Carga lista de clientes
+				$scope.CargarClientes();
+			},function myError(response){
+				console.log("Peticion con error");
+				console.log(response);
+			});
+		};
+		$scope.init=function(){
+			$http({
+				method : "POST",
+				url:"http://localhost:51475/WSColonias.svc/getColonias"
+			}).then(function mySucess(response){
+				$scope.Colonias=response.data;
+				//console.log($scope.Colonias);
+			},function myError(response){
+				console.log(response);
+			});
+
+			//Carga lista de clientes
+			$scope.CargarClientes();
+		};
+		$scope.CargarClientes=function(){
+			$http({
+				method : "POST",
+				url:"http://localhost:51475/Service1.svc/getClientes"
+			}).then(function mySucess(response){
+				$scope.Clientes=response.data;
+			},function myError(response){
+				console.log(response);
+			});
+		};
+		$scope.VerJSON=function(){
+			alert(JSON.stringify($scope.Cliente));
+		}
+		$scope.Mostrar=function(cliente){
+			//$scope.Cliente=cliente;
+			$http({
+				method : "POST",
+				url:"http://localhost:51475/Service1.svc/getCliente",
+				//data: '{"Id":' + JSON.stringify(cliente.Id) + '}'
+				data: JSON.stringify(cliente.Id)
+			}).then(function mySucess(response){
+				$scope.Cliente=response.data;
+				$scope.VerFormulario=true;
+			},function myError(response){
+				console.log(response);
+			});
+
+		};
+	}]);
+</script>
