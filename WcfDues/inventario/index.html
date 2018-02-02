@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html ng-app="InventarioDues">
+<head>
+    <meta charset="utf-8">
+    <title>Inventario Dues</title>
+    <!-- CSS -->
+    <!--<script src="node_modules/bootstrap/dist/css/bootstrap.css"></script>-->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="css/Login.css">
+    <link rel="stylesheet" href="css/Style.css">
+    <link rel="stylesheet" type="text/css" href="node_modules/angular-ui-grid/ui-grid.css" />
+
+    <!-- JS -->
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="node_modules/angular-route/angular-route.min.js"></script>
+    <script src="node_modules/angular-animate/angular-animate.min.js"></script>
+    <script src="node_modules/angular-sanitize/angular-sanitize.min.js"></script>
+    <script src="node_modules/angular-ui-bootstrap/dist/ui-bootstrap.js"></script>
+    <script src="node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
+    <script src="node_modules/angular-touch/angular-touch.min.js"></script>
+    <script src="node_modules/angular-resource/angular-resource.min.js"></script>
+    <script src="node_modules/angular-ui-grid/ui-grid.js"></script>
+
+    <script src="app.js"></script>
+
+    <!-- Controladores -->
+    <script src="Controllers/LoginController.js"></script>
+    <script src="Controllers/InventarioActualController.js"></script>
+    <script src="Controllers/TomasInventariosController.js"></script>
+
+    <!--Modelos -->
+    <script src="Models/Usuarios.js"></script>
+
+</head>
+<body>
+        <nav class="navbar navbar-inverse bg-inverse" role="navigation">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Dues</a>
+            </div>
+            <div class="collapse navbar-collapse" uib-collapse="isNavCollapsed">
+                <!--<ul class="nav navbar-nav">
+                    <li><a href="#">Link 1</a></li>
+                    <li><a href="#">Link 2</a></li>
+                </ul>-->
+            </div>
+        </nav>
+        <div class="container" ng-view>
+            
+        </div>
+</body>
+</html>

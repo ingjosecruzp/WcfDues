@@ -1,0 +1,8 @@
+.OpcionesCirculos{
+    width: 65%;
+    cursor: pointer;
+}
+.OpcionesCirculos:hover{
+    width: 70%;
+    cursor: pointer;
+}
