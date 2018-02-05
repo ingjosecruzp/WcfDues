@@ -67,5 +67,9 @@ namespace WcfDues
             response.Headers.Add("Error", error);
 
         }
+        //Metodo para dar respuesta las peticiones OPTION CORS
+        public void GetOptions()
+        {
+        }
     }
 }

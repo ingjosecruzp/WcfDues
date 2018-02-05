@@ -18,5 +18,10 @@ namespace WcfDues
         RequestFormat = WebMessageFormat.Json,
         Method = "GET")]
         TEntity get(string id);
+
+        //Servicio para dar respueta a als peticion OPTIONS que viene de CORS
+        [OperationContract]
+        [WebInvoke(Method = "OPTIONS", UriTemplate = "*")]
+        void GetOptions();
     }
 }

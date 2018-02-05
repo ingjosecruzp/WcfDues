@@ -47,5 +47,7 @@ namespace WcfDues
         public virtual DbSet<colonias> colonias { get; set; }
         public virtual DbSet<usuarios> usuarios { get; set; }
         public virtual DbSet<tokens> tokens { get; set; }
+        public virtual DbSet<detalle_inventario> detalle_inventario { get; set; }
+        public virtual DbSet<inventario> inventario { get; set; }
     }
 }

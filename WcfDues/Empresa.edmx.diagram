@@ -10,6 +10,10 @@
         <EntityTypeShape EntityType="duesModel.usuarios" Width="1.5" PointX="0.75" PointY="4.75" />
         <AssociationConnector Association="duesModel.ClientesColonias" />
         <EntityTypeShape EntityType="duesModel.tokens" Width="1.5" PointX="3.375" PointY="4.75" />
+        <EntityTypeShape EntityType="duesModel.detalle_inventario" Width="1.5" PointX="5.25" PointY="7.125" />
+        <EntityTypeShape EntityType="duesModel.inventario" Width="1.5" PointX="3" PointY="7.5" />
+        <AssociationConnector Association="duesModel.detalle_inventario_ibfk_1" />
+        <AssociationConnector Association="duesModel.inventario_ibfk_1" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -18,6 +18,30 @@
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Nombre" Type="varchar" MaxLength="25" Nullable="false" />
   </EntityType>
+  <EntityType Name="detalle_inventario">
+    <Key>
+      <PropertyRef Name="idDetalle_Inventario" />
+    </Key>
+    <Property Name="idDetalle_Inventario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ItemCode" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="ItemName" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="Codebars" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="Cantidad" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="NombreLote" Type="varchar" MaxLength="45" />
+    <Property Name="PicturName" Type="varchar" MaxLength="45" />
+    <Property Name="FechaHora" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="InventarioId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="inventario">
+    <Key>
+      <PropertyRef Name="idInventario" />
+    </Key>
+    <Property Name="idInventario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FechaInicio" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="UsuarioId" Type="int" Nullable="false" />
+    <Property Name="UUID" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="Modelo" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
   <EntityType Name="tokens">
     <Key>
       <PropertyRef Name="Id" />
@@ -46,14 +70,48 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="detalle_inventario_ibfk_1">
+    <End Role="inventario" Type="Self.inventario" Multiplicity="1" />
+    <End Role="detalle_inventario" Type="Self.detalle_inventario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="inventario">
+        <PropertyRef Name="idInventario" />
+      </Principal>
+      <Dependent Role="detalle_inventario">
+        <PropertyRef Name="InventarioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="inventario_ibfk_1">
+    <End Role="usuarios" Type="Self.usuarios" Multiplicity="1" />
+    <End Role="inventario" Type="Self.inventario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usuarios">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="inventario">
+        <PropertyRef Name="UsuarioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="duesModelStoreContainer">
     <EntitySet Name="clientes" EntityType="Self.clientes" Schema="dues" store:Type="Tables" />
     <EntitySet Name="colonias" EntityType="Self.colonias" Schema="dues" store:Type="Tables" />
+    <EntitySet Name="detalle_inventario" EntityType="Self.detalle_inventario" Schema="dues" store:Type="Tables" />
+    <EntitySet Name="inventario" EntityType="Self.inventario" Schema="dues" store:Type="Tables" />
     <EntitySet Name="tokens" EntityType="Self.tokens" Schema="dues" store:Type="Tables" />
     <EntitySet Name="usuarios" EntityType="Self.usuarios" Schema="dues" store:Type="Tables" />
     <AssociationSet Name="ClientesColonias" Association="Self.ClientesColonias">
       <End Role="colonias" EntitySet="colonias" />
       <End Role="clientes" EntitySet="clientes" />
+    </AssociationSet>
+    <AssociationSet Name="detalle_inventario_ibfk_1" Association="Self.detalle_inventario_ibfk_1">
+      <End Role="inventario" EntitySet="inventario" />
+      <End Role="detalle_inventario" EntitySet="detalle_inventario" />
+    </AssociationSet>
+    <AssociationSet Name="inventario_ibfk_1" Association="Self.inventario_ibfk_1">
+      <End Role="usuarios" EntitySet="usuarios" />
+      <End Role="inventario" EntitySet="inventario" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

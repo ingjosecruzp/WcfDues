@@ -23,6 +23,30 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Nombre" Type="varchar" MaxLength="25" Nullable="false" />
         </EntityType>
+        <EntityType Name="detalle_inventario">
+          <Key>
+            <PropertyRef Name="idDetalle_Inventario" />
+          </Key>
+          <Property Name="idDetalle_Inventario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ItemCode" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="ItemName" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="Codebars" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="Cantidad" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="NombreLote" Type="varchar" MaxLength="45" />
+          <Property Name="PicturName" Type="varchar" MaxLength="45" />
+          <Property Name="FechaHora" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="InventarioId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="inventario">
+          <Key>
+            <PropertyRef Name="idInventario" />
+          </Key>
+          <Property Name="idInventario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FechaInicio" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="UsuarioId" Type="int" Nullable="false" />
+          <Property Name="UUID" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="Modelo" Type="varchar" MaxLength="20" Nullable="false" />
+        </EntityType>
         <EntityType Name="tokens">
           <Key>
             <PropertyRef Name="Id" />
@@ -51,14 +75,48 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="detalle_inventario_ibfk_1">
+          <End Role="inventario" Type="Self.inventario" Multiplicity="1" />
+          <End Role="detalle_inventario" Type="Self.detalle_inventario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="inventario">
+              <PropertyRef Name="idInventario" />
+            </Principal>
+            <Dependent Role="detalle_inventario">
+              <PropertyRef Name="InventarioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="inventario_ibfk_1">
+          <End Role="usuarios" Type="Self.usuarios" Multiplicity="1" />
+          <End Role="inventario" Type="Self.inventario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuarios">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="inventario">
+              <PropertyRef Name="UsuarioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="duesModelStoreContainer">
           <EntitySet Name="clientes" EntityType="Self.clientes" Schema="dues" store:Type="Tables" />
           <EntitySet Name="colonias" EntityType="Self.colonias" Schema="dues" store:Type="Tables" />
+          <EntitySet Name="detalle_inventario" EntityType="Self.detalle_inventario" Schema="dues" store:Type="Tables" />
+          <EntitySet Name="inventario" EntityType="Self.inventario" Schema="dues" store:Type="Tables" />
           <EntitySet Name="tokens" EntityType="Self.tokens" Schema="dues" store:Type="Tables" />
           <EntitySet Name="usuarios" EntityType="Self.usuarios" Schema="dues" store:Type="Tables" />
           <AssociationSet Name="ClientesColonias" Association="Self.ClientesColonias">
             <End Role="colonias" EntitySet="colonias" />
             <End Role="clientes" EntitySet="clientes" />
+          </AssociationSet>
+          <AssociationSet Name="detalle_inventario_ibfk_1" Association="Self.detalle_inventario_ibfk_1">
+            <End Role="inventario" EntitySet="inventario" />
+            <End Role="detalle_inventario" EntitySet="detalle_inventario" />
+          </AssociationSet>
+          <AssociationSet Name="inventario_ibfk_1" Association="Self.inventario_ibfk_1">
+            <End Role="usuarios" EntitySet="usuarios" />
+            <End Role="inventario" EntitySet="inventario" />
           </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -74,6 +132,16 @@
             <End Role="clientes" EntitySet="clientes" />
           </AssociationSet>
           <EntitySet Name="tokens" EntityType="duesModel.tokens" />
+          <EntitySet Name="detalle_inventario" EntityType="duesModel.detalle_inventario" />
+          <EntitySet Name="inventario" EntityType="duesModel.inventario" />
+          <AssociationSet Name="detalle_inventario_ibfk_1" Association="duesModel.detalle_inventario_ibfk_1">
+            <End Role="inventario" EntitySet="inventario" />
+            <End Role="detalle_inventario" EntitySet="detalle_inventario" />
+          </AssociationSet>
+          <AssociationSet Name="inventario_ibfk_1" Association="duesModel.inventario_ibfk_1">
+            <End Role="usuarios" EntitySet="usuarios" />
+            <End Role="inventario" EntitySet="inventario" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="clientes">
           <Key>
@@ -102,6 +170,7 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Usuario" Type="String" Nullable="false" MaxLength="8" FixedLength="false" Unicode="false" />
           <Property Name="Password" Type="String" Nullable="false" MaxLength="8" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="inventario" Relationship="duesModel.inventario_ibfk_1" FromRole="usuarios" ToRole="inventario" />
         </EntityType>
         <Association Name="ClientesColonias">
           <End Type="duesModel.colonias" Role="colonias" Multiplicity="0..1" />
@@ -123,6 +192,57 @@
           <Property Name="Token" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
           <Property Name="FechaUltimaModificacion" Type="DateTime" />
         </EntityType>
+        <EntityType Name="detalle_inventario">
+          <Key>
+            <PropertyRef Name="idDetalle_Inventario" />
+          </Key>
+          <Property Name="idDetalle_Inventario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ItemCode" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="ItemName" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="Codebars" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="Cantidad" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="NombreLote" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="PicturName" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="FechaHora" Type="DateTime" Nullable="false" />
+          <Property Name="InventarioId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="inventario" Relationship="duesModel.detalle_inventario_ibfk_1" FromRole="detalle_inventario" ToRole="inventario" />
+        </EntityType>
+        <EntityType Name="inventario">
+          <Key>
+            <PropertyRef Name="idInventario" />
+          </Key>
+          <Property Name="idInventario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FechaInicio" Type="DateTime" Nullable="false" />
+          <Property Name="UsuarioId" Type="Int32" Nullable="false" />
+          <Property Name="UUID" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="Modelo" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="detalle_inventario" Relationship="duesModel.detalle_inventario_ibfk_1" FromRole="inventario" ToRole="detalle_inventario" />
+          <NavigationProperty Name="usuarios" Relationship="duesModel.inventario_ibfk_1" FromRole="inventario" ToRole="usuarios" />
+        </EntityType>
+        <Association Name="detalle_inventario_ibfk_1">
+          <End Type="duesModel.inventario" Role="inventario" Multiplicity="1" />
+          <End Type="duesModel.detalle_inventario" Role="detalle_inventario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="inventario">
+              <PropertyRef Name="idInventario" />
+            </Principal>
+            <Dependent Role="detalle_inventario">
+              <PropertyRef Name="InventarioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="inventario_ibfk_1">
+          <End Type="duesModel.usuarios" Role="usuarios" Multiplicity="1" />
+          <End Type="duesModel.inventario" Role="inventario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuarios">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="inventario">
+              <PropertyRef Name="UsuarioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -164,6 +284,32 @@
                 <ScalarProperty Name="FechaUltimaModificacion" ColumnName="FechaUltimaModificacion" />
                 <ScalarProperty Name="Token" ColumnName="Token" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="detalle_inventario">
+            <EntityTypeMapping TypeName="duesModel.detalle_inventario">
+              <MappingFragment StoreEntitySet="detalle_inventario">
+                <ScalarProperty Name="InventarioId" ColumnName="InventarioId" />
+                <ScalarProperty Name="FechaHora" ColumnName="FechaHora" />
+                <ScalarProperty Name="PicturName" ColumnName="PicturName" />
+                <ScalarProperty Name="NombreLote" ColumnName="NombreLote" />
+                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+                <ScalarProperty Name="Codebars" ColumnName="Codebars" />
+                <ScalarProperty Name="ItemName" ColumnName="ItemName" />
+                <ScalarProperty Name="ItemCode" ColumnName="ItemCode" />
+                <ScalarProperty Name="idDetalle_Inventario" ColumnName="idDetalle_Inventario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="inventario">
+            <EntityTypeMapping TypeName="duesModel.inventario">
+              <MappingFragment StoreEntitySet="inventario">
+                <ScalarProperty Name="Modelo" ColumnName="Modelo" />
+                <ScalarProperty Name="UUID" ColumnName="UUID" />
+                <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
+                <ScalarProperty Name="FechaInicio" ColumnName="FechaInicio" />
+                <ScalarProperty Name="idInventario" ColumnName="idInventario" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

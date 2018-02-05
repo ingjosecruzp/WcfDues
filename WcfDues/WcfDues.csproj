@@ -113,6 +113,7 @@
     </Content>
     <Content Include="WSArticulos.svc" />
     <Content Include="WSColonias.svc" />
+    <Content Include="WSInventario.svc" />
     <Content Include="WSUsuarios.svc" />
   </ItemGroup>
   <ItemGroup>
@@ -120,6 +121,9 @@
       <DependentUpon>Empresa.tt</DependentUpon>
     </Compile>
     <Compile Include="colonias.cs">
+      <DependentUpon>Empresa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="detalle_inventario.cs">
       <DependentUpon>Empresa.tt</DependentUpon>
     </Compile>
     <Compile Include="Empresa.Context.cs">
@@ -137,14 +141,20 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Empresa.edmx</DependentUpon>
     </Compile>
+    <Compile Include="FormatterJsonNET\CustomHeaderMessageInspector.cs" />
+    <Compile Include="FormatterJsonNET\EnableCrossOriginResourceSharingBehavior.cs" />
     <Compile Include="FormatterJsonNET\NewtonsoftJsonBehavior.cs" />
     <Compile Include="FormatterJsonNET\NewtonsoftJsonBehaviorExtension.cs" />
     <Compile Include="FormatterJsonNET\NewtonsoftJsonContentTypeMapper .cs" />
     <Compile Include="FormatterJsonNET\NewtonsoftJsonDispatchFormatter.cs" />
     <Compile Include="FormatterJsonNET\RawBodyWriter.cs" />
+    <Compile Include="inventario.cs">
+      <DependentUpon>Empresa.tt</DependentUpon>
+    </Compile>
     <Compile Include="IWSArticulos.cs" />
     <Compile Include="IWSBase.cs" />
     <Compile Include="IWSColonias.cs" />
+    <Compile Include="IWSInventario.cs" />
     <Compile Include="IWSUsuarios.cs" />
     <Compile Include="OITM.cs">
       <DependentUpon>Sap.tt</DependentUpon>
@@ -185,6 +195,9 @@
     <Compile Include="WsBase.cs" />
     <Compile Include="WSColonias.svc.cs">
       <DependentUpon>WSColonias.svc</DependentUpon>
+    </Compile>
+    <Compile Include="WSInventario.svc.cs">
+      <DependentUpon>WSInventario.svc</DependentUpon>
     </Compile>
     <Compile Include="WSUsuarios.svc.cs">
       <DependentUpon>WSUsuarios.svc</DependentUpon>
