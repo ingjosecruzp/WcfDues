@@ -28,3 +28,18 @@ C:\Users\eguerra\Documents\Visual Studio 2015\Projects\WcfDues\WcfDues\bin\Newto
 C:\Users\eguerra\Documents\Visual Studio 2015\Projects\WcfDues\WcfDues\obj\Debug\WcfDues.csprojResolveAssemblyReference.cache
 C:\Users\eguerra\Documents\Visual Studio 2015\Projects\WcfDues\WcfDues\obj\Debug\WcfDues.dll
 C:\Users\eguerra\Documents\Visual Studio 2015\Projects\WcfDues\WcfDues\obj\Debug\WcfDues.pdb
+C:\Users\Federico\Documents\GitHub\WcfDues\WcfDues\bin\WcfDues.dll.config
+C:\Users\Federico\Documents\GitHub\WcfDues\WcfDues\bin\WcfDues.dll
+C:\Users\Federico\Documents\GitHub\WcfDues\WcfDues\bin\WcfDues.pdb
+C:\Users\Federico\Documents\GitHub\WcfDues\WcfDues\bin\EntityFramework.dll
+C:\Users\Federico\Documents\GitHub\WcfDues\WcfDues\bin\EntityFramework.SqlServer.dll
+C:\Users\Federico\Documents\GitHub\WcfDues\WcfDues\bin\JWT.dll
+C:\Users\Federico\Documents\GitHub\WcfDues\WcfDues\bin\MySql.Data.dll
+C:\Users\Federico\Documents\GitHub\WcfDues\WcfDues\bin\MySql.Data.Entity.EF6.dll
+C:\Users\Federico\Documents\GitHub\WcfDues\WcfDues\bin\Newtonsoft.Json.dll
+C:\Users\Federico\Documents\GitHub\WcfDues\WcfDues\bin\EntityFramework.xml
+C:\Users\Federico\Documents\GitHub\WcfDues\WcfDues\bin\EntityFramework.SqlServer.xml
+C:\Users\Federico\Documents\GitHub\WcfDues\WcfDues\bin\Newtonsoft.Json.xml
+C:\Users\Federico\Documents\GitHub\WcfDues\WcfDues\obj\Debug\WcfDues.csprojResolveAssemblyReference.cache
+C:\Users\Federico\Documents\GitHub\WcfDues\WcfDues\obj\Debug\WcfDues.dll
+C:\Users\Federico\Documents\GitHub\WcfDues\WcfDues\obj\Debug\WcfDues.pdb

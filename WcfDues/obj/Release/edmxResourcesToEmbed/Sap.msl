@@ -4,6 +4,9 @@
     <EntitySetMapping Name="OITM">
       <EntityTypeMapping TypeName="SapModel.OITM">
         <MappingFragment StoreEntitySet="OITM">
+          <ScalarProperty Name="U_BOY_TB_0" ColumnName="U_BOY_TB_0" />
+          <ScalarProperty Name="U_DD_RAPPORT_TRA" ColumnName="U_DD_RAPPORT_TRA" />
+          <ScalarProperty Name="U_ST_KITCODE" ColumnName="U_ST_KITCODE" />
           <ScalarProperty Name="ItemCode" ColumnName="ItemCode" />
           <ScalarProperty Name="ItemName" ColumnName="ItemName" />
           <ScalarProperty Name="FrgnName" ColumnName="FrgnName" />
@@ -459,6 +462,134 @@
           <ScalarProperty Name="FreezeDoc" ColumnName="FreezeDoc" />
           <ScalarProperty Name="FreeChrgSA" ColumnName="FreeChrgSA" />
           <ScalarProperty Name="FreeChrgPU" ColumnName="FreeChrgPU" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OWHS">
+      <EntityTypeMapping TypeName="SapModel.OWHS">
+        <MappingFragment StoreEntitySet="OWHS">
+          <ScalarProperty Name="Address3" ColumnName="Address3" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="TaxOffice" ColumnName="TaxOffice" />
+          <ScalarProperty Name="FreeChrgPU" ColumnName="FreeChrgPU" />
+          <ScalarProperty Name="FreeChrgSA" ColumnName="FreeChrgSA" />
+          <ScalarProperty Name="RecvUpTo" ColumnName="RecvUpTo" />
+          <ScalarProperty Name="RecvMaxWT" ColumnName="RecvMaxWT" />
+          <ScalarProperty Name="AutoRecvMd" ColumnName="AutoRecvMd" />
+          <ScalarProperty Name="RecvMaxQty" ColumnName="RecvMaxQty" />
+          <ScalarProperty Name="Inactive" ColumnName="Inactive" />
+          <ScalarProperty Name="RecvEmpBin" ColumnName="RecvEmpBin" />
+          <ScalarProperty Name="GlblLocNum" ColumnName="GlblLocNum" />
+          <ScalarProperty Name="RecBinEnab" ColumnName="RecBinEnab" />
+          <ScalarProperty Name="RecItemsBy" ColumnName="RecItemsBy" />
+          <ScalarProperty Name="ManageSnB" ColumnName="ManageSnB" />
+          <ScalarProperty Name="AutoIssMtd" ColumnName="AutoIssMtd" />
+          <ScalarProperty Name="DftBinEnfd" ColumnName="DftBinEnfd" />
+          <ScalarProperty Name="DftBinAbs" ColumnName="DftBinAbs" />
+          <ScalarProperty Name="BinSeptor" ColumnName="BinSeptor" />
+          <ScalarProperty Name="BinActivat" ColumnName="BinActivat" />
+          <ScalarProperty Name="Shipper" ColumnName="Shipper" />
+          <ScalarProperty Name="StorKeeper" ColumnName="StorKeeper" />
+          <ScalarProperty Name="StockOffst" ColumnName="StockOffst" />
+          <ScalarProperty Name="WipOffset" ColumnName="WipOffset" />
+          <ScalarProperty Name="WhShipTo" ColumnName="WhShipTo" />
+          <ScalarProperty Name="WhOCenAct" ColumnName="WhOCenAct" />
+          <ScalarProperty Name="WhICenAct" ColumnName="WhICenAct" />
+          <ScalarProperty Name="Excisable" ColumnName="Excisable" />
+          <ScalarProperty Name="PurBalAct" ColumnName="PurBalAct" />
+          <ScalarProperty Name="StreetNo" ColumnName="StreetNo" />
+          <ScalarProperty Name="AddrType" ColumnName="AddrType" />
+          <ScalarProperty Name="StkInTnAct" ColumnName="StkInTnAct" />
+          <ScalarProperty Name="NegStckAct" ColumnName="NegStckAct" />
+          <ScalarProperty Name="OwnerCode" ColumnName="OwnerCode" />
+          <ScalarProperty Name="BPLid" ColumnName="BPLid" />
+          <ScalarProperty Name="RevRetAct" ColumnName="RevRetAct" />
+          <ScalarProperty Name="APCMEUAct" ColumnName="APCMEUAct" />
+          <ScalarProperty Name="APCMFrnAct" ColumnName="APCMFrnAct" />
+          <ScalarProperty Name="APCMAct" ColumnName="APCMAct" />
+          <ScalarProperty Name="ARCMExpAct" ColumnName="ARCMExpAct" />
+          <ScalarProperty Name="ARCMEUAct" ColumnName="ARCMEUAct" />
+          <ScalarProperty Name="ARCMFrnAct" ColumnName="ARCMFrnAct" />
+          <ScalarProperty Name="ARCMAct" ColumnName="ARCMAct" />
+          <ScalarProperty Name="updateDate" ColumnName="updateDate" />
+          <ScalarProperty Name="userSign2" ColumnName="userSign2" />
+          <ScalarProperty Name="createDate" ColumnName="createDate" />
+          <ScalarProperty Name="logInstanc" ColumnName="logInstanc" />
+          <ScalarProperty Name="objType" ColumnName="objType" />
+          <ScalarProperty Name="ExpOfstAct" ColumnName="ExpOfstAct" />
+          <ScalarProperty Name="ExpClrAct" ColumnName="ExpClrAct" />
+          <ScalarProperty Name="CstOffsAct" ColumnName="CstOffsAct" />
+          <ScalarProperty Name="CostRvlAct" ColumnName="CostRvlAct" />
+          <ScalarProperty Name="WipVarAcct" ColumnName="WipVarAcct" />
+          <ScalarProperty Name="WipAcct" ColumnName="WipAcct" />
+          <ScalarProperty Name="StkOffsAct" ColumnName="StkOffsAct" />
+          <ScalarProperty Name="StokRvlAct" ColumnName="StokRvlAct" />
+          <ScalarProperty Name="Nettable" ColumnName="Nettable" />
+          <ScalarProperty Name="IncresGlAc" ColumnName="IncresGlAc" />
+          <ScalarProperty Name="DecresGlAc" ColumnName="DecresGlAc" />
+          <ScalarProperty Name="VatRevAct" ColumnName="VatRevAct" />
+          <ScalarProperty Name="ShpdGdsAct" ColumnName="ShpdGdsAct" />
+          <ScalarProperty Name="Building" ColumnName="Building" />
+          <ScalarProperty Name="FedTaxID" ColumnName="FedTaxID" />
+          <ScalarProperty Name="PurchOfsAc" ColumnName="PurchOfsAc" />
+          <ScalarProperty Name="PAReturnAc" ColumnName="PAReturnAc" />
+          <ScalarProperty Name="PurchaseAc" ColumnName="PurchaseAc" />
+          <ScalarProperty Name="BalanceAcc" ColumnName="BalanceAcc" />
+          <ScalarProperty Name="ExchangeAc" ColumnName="ExchangeAc" />
+          <ScalarProperty Name="PriceDifAc" ColumnName="PriceDifAc" />
+          <ScalarProperty Name="UseTax" ColumnName="UseTax" />
+          <ScalarProperty Name="ExmptIncom" ColumnName="ExmptIncom" />
+          <ScalarProperty Name="DropShip" ColumnName="DropShip" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="County" ColumnName="County" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+          <ScalarProperty Name="Block" ColumnName="Block" />
+          <ScalarProperty Name="Street" ColumnName="Street" />
+          <ScalarProperty Name="VatGroup" ColumnName="VatGroup" />
+          <ScalarProperty Name="FrExpensAc" ColumnName="FrExpensAc" />
+          <ScalarProperty Name="FrRevenuAc" ColumnName="FrRevenuAc" />
+          <ScalarProperty Name="EUExpensAc" ColumnName="EUExpensAc" />
+          <ScalarProperty Name="EURevenuAc" ColumnName="EURevenuAc" />
+          <ScalarProperty Name="ExpensesAc" ColumnName="ExpensesAc" />
+          <ScalarProperty Name="ReturnAc" ColumnName="ReturnAc" />
+          <ScalarProperty Name="IncreasAc" ColumnName="IncreasAc" />
+          <ScalarProperty Name="DecreasAc" ColumnName="DecreasAc" />
+          <ScalarProperty Name="VarianceAc" ColumnName="VarianceAc" />
+          <ScalarProperty Name="RevenuesAc" ColumnName="RevenuesAc" />
+          <ScalarProperty Name="UserSign" ColumnName="UserSign" />
+          <ScalarProperty Name="DataSource" ColumnName="DataSource" />
+          <ScalarProperty Name="Locked" ColumnName="Locked" />
+          <ScalarProperty Name="TransferAc" ColumnName="TransferAc" />
+          <ScalarProperty Name="SaleCostAc" ColumnName="SaleCostAc" />
+          <ScalarProperty Name="BalInvntAc" ColumnName="BalInvntAc" />
+          <ScalarProperty Name="Grp_Code" ColumnName="Grp_Code" />
+          <ScalarProperty Name="IntrnalKey" ColumnName="IntrnalKey" />
+          <ScalarProperty Name="WhsName" ColumnName="WhsName" />
+          <ScalarProperty Name="WhsCode" ColumnName="WhsCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ITM1">
+      <EntityTypeMapping TypeName="SapModel.ITM1">
+        <MappingFragment StoreEntitySet="ITM1">
+          <ScalarProperty Name="BasePLNum" ColumnName="BasePLNum" />
+          <ScalarProperty Name="Ovrwrite2" ColumnName="Ovrwrite2" />
+          <ScalarProperty Name="Ovrwrite1" ColumnName="Ovrwrite1" />
+          <ScalarProperty Name="Currency2" ColumnName="Currency2" />
+          <ScalarProperty Name="AddPrice2" ColumnName="AddPrice2" />
+          <ScalarProperty Name="Currency1" ColumnName="Currency1" />
+          <ScalarProperty Name="AddPrice1" ColumnName="AddPrice1" />
+          <ScalarProperty Name="ObjType" ColumnName="ObjType" />
+          <ScalarProperty Name="LogInstanc" ColumnName="LogInstanc" />
+          <ScalarProperty Name="Factor" ColumnName="Factor" />
+          <ScalarProperty Name="Ovrwritten" ColumnName="Ovrwritten" />
+          <ScalarProperty Name="Currency" ColumnName="Currency" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="PriceList" ColumnName="PriceList" />
+          <ScalarProperty Name="ItemCode" ColumnName="ItemCode" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

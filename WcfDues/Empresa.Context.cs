@@ -32,7 +32,7 @@ namespace WcfDues
             string user ="root";
     
             //Obtiene el password a la bd 
-            string password = System.Diagnostics.Debugger.IsAttached == true ? "pwjrnew" : "admindues";
+            string password = System.Diagnostics.Debugger.IsAttached == true ? "" : "admindues";
     
             //Obtiene la bd de la empresa del token empresa
             string bd = System.Diagnostics.Debugger.IsAttached == true ? "dues" : "DuesInventarios";
