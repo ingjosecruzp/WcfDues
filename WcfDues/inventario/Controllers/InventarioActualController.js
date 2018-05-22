@@ -1,28 +1,48 @@
-app.controller("InventarioActualController", ['$scope','$window','$location','$uibModal', function($scope,$window,$location,$uibModal) { 
-    $scope.myData = [
-        {
-            firstName: "Cox",
-            lastName: "Carney",
-            company: "Enormo",
-            employed: true
-        },
-        {
-            firstName: "Lorraine",
-            lastName: "Wise",
-            company: "Comveyer",
-            employed: false
-        },
-        {
-            firstName: "Nancy",
-            lastName: "Waters",
-            company: "Fuelton",
-            employed: false
-        }
-    ];
+app.controller("InventarioActualController", ['$scope','$window','$location','$uibModal','Inventario','inventario_aplicado','uiGridGroupingConstants','$q', function($scope,$window,$location,$uibModal,Inventario,inventario_aplicado,uiGridGroupingConstants,$q) { 
+    $scope.inventario=[];
+    $scope.inventariodetallesgrid=[];
+    $scope.usuariosp={};
+
+
+    $scope.gridOptions = {
+        enableFiltering: true,
+        enableRowSelection: true,
+        enableSelectAll: true,
+        selectionRowHeaderWidth: 35,
+        treeRowHeaderAlwaysVisible: false,
+        rowEditWaitInterval: -1,
+        rowHeight: 35,
+        showGridFooter:true,
+        columnDefs: [
+                {field: 'ItemCode', displayName:'Codigo SAP',enableCellEdit: false},
+                {field: 'CodeBars', displayName:'Codigo de Barras',enableCellEdit: false},
+                {field: 'ItemName', displayName: 'Descripcion',enableCellEdit: false},
+                {field: 'Cantidad', displayName: 'Cantidad',type: 'number',treeAggregationType: uiGridGroupingConstants.aggregation.SUM},
+                {field: 'NombreLote', displayName: 'Lote',enableCellEdit: false},
+                {field: 'usuarios.Usuario', displayName: 'Nombre del usuario',enableCellEdit: false}
+        ],  
+      };
+
+      $scope.saveRow = function( rowEntity ) {
+        console.log( 'SaveRow called for: ' + rowEntity.id);
+        // create a fake promise - normally you'd use the promise returned by $http or $resource
+        var promise = $q.defer();
+        $scope.gridApi.rowEdit.setSavePromise( $scope.gridApi.grid, rowEntity, promise.promise );
+       
+        // fake a delay of 3 seconds whilst the save occurs, return error if gender is "male"
+        $interval( function() {
+          if (rowEntity.gender === 'male' ){
+            promise.reject();
+          } else {
+            promise.resolve();
+          }
+        }, 3000, 1);
+      };
+
  
     $scope.TomaInventario = function() {
         try{			
-            $scope.ModalTomaInventario = $uibModal.open({
+            var ModalTomaInventario = $uibModal.open({
                 animation: true,
                 ariaLabelledBy: 'modal-title',
                 ariaDescribedBy: 'modal-body',
@@ -30,9 +50,41 @@ app.controller("InventarioActualController", ['$scope','$window','$location','$u
                 controller: 'TomasInventariosController',
                 //controllerAs: '$ctrl'
               });    
+
+              ModalTomaInventario.result.then(function (TomasInventario) {
+               
+                console.log(TomasInventario);
+                Inventario.query({method:'getInventarioActualDetalles',id:TomasInventario.toString()}, function(response) {
+                    $scope.gridOptions.data=response.data;
+                    $scope.inventariodetallesgrid=$scope.gridOptions.data;
+                }, function(error) {
+                    console.log(error);
+                });
+              }, function () {
+                console.log('Modal dismissed at: ' + new Date());
+              });
     	}
     	catch(err){
     		console.log(err);
-    	}
-	}
+        }
+    }
+    $scope.AplicarInventario = function() {
+        try{
+
+                $scope.inventariodetallesgrid.forEach(function(record){
+                      record.usuarios=null;
+                });
+
+                var newInventario = new inventario_aplicado({
+                    idInventario:0,
+                    UsuarioId   :0,
+                    detalle_inventario_aplicado :$scope.gridOptions.data});
+                    newInventario.$save();
+
+                  //  $scope.gridOptions.data.length=0;
+        }
+    	catch(err){
+            console.log(err);
+        }
+    }
 }]);

@@ -12,26 +12,19 @@ namespace WcfDues
     using System;
     using System.Collections.Generic;
     
-    public partial class usuarios
+    public partial class inventario_aplicado
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public usuarios()
+        public inventario_aplicado()
         {
-            this.detalle_inventario = new HashSet<detalle_inventario>();
             this.detalle_inventario_aplicado = new HashSet<detalle_inventario_aplicado>();
-            this.inventario = new HashSet<inventario>();
         }
     
-        public int Id { get; set; }
-        public string Usuario { get; set; }
-        public string Password { get; set; }
-        public string Nombre { get; set; }
+        public int idInventario { get; set; }
+        public System.DateTime FechaInicio { get; set; }
+        public int UsuarioId { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<detalle_inventario> detalle_inventario { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<detalle_inventario_aplicado> detalle_inventario_aplicado { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<inventario> inventario { get; set; }
     }
 }

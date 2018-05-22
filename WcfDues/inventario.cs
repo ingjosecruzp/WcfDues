@@ -25,6 +25,7 @@ namespace WcfDues
         public int UsuarioId { get; set; }
         public string UUID { get; set; }
         public string Modelo { get; set; }
+        public string Estado { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<detalle_inventario> detalle_inventario { get; set; }

@@ -5,14 +5,19 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="9da792500e8b4c4aa81540780cc2af7d" Name="Diagram1">
-        <EntityTypeShape EntityType="duesModel.clientes" Width="1.5" PointX="3" PointY="1" />
-        <EntityTypeShape EntityType="duesModel.colonias" Width="1.5" PointX="0.75" PointY="1.375" />
-        <EntityTypeShape EntityType="duesModel.usuarios" Width="1.5" PointX="0.75" PointY="4.75" />
+        <EntityTypeShape EntityType="duesModel.clientes" Width="1.5" PointX="5" PointY="1" />
+        <EntityTypeShape EntityType="duesModel.colonias" Width="1.5" PointX="2.75" PointY="1.375" />
+        <EntityTypeShape EntityType="duesModel.detalle_inventario" Width="1.5" PointX="5.25" PointY="9.125" />
+        <EntityTypeShape EntityType="duesModel.detalle_inventario_aplicado" Width="1.5" PointX="3" PointY="5" />
+        <EntityTypeShape EntityType="duesModel.inventario" Width="1.5" PointX="3" PointY="13.625" />
+        <EntityTypeShape EntityType="duesModel.inventario_aplicado" Width="1.5" PointX="0.75" PointY="2.875" />
+        <EntityTypeShape EntityType="duesModel.tokens" Width="1.5" PointX="5.75" PointY="4.75" />
+        <EntityTypeShape EntityType="duesModel.usuarios" Width="1.5" PointX="0.75" PointY="5.5" />
         <AssociationConnector Association="duesModel.ClientesColonias" />
-        <EntityTypeShape EntityType="duesModel.tokens" Width="1.5" PointX="3.375" PointY="4.75" />
-        <EntityTypeShape EntityType="duesModel.detalle_inventario" Width="1.5" PointX="5.25" PointY="7.125" />
-        <EntityTypeShape EntityType="duesModel.inventario" Width="1.5" PointX="3" PointY="7.5" />
         <AssociationConnector Association="duesModel.detalle_inventario_ibfk_1" />
+        <AssociationConnector Association="duesModel.detalle_inventario_ibfk_2" />
+        <AssociationConnector Association="duesModel.detalle_inventario_aplicado_ibfk_1" />
+        <AssociationConnector Association="duesModel.detalle_inventario_aplicado_ibfk_3" />
         <AssociationConnector Association="duesModel.inventario_ibfk_1" />
       </Diagram>
     </edmx:Diagrams>

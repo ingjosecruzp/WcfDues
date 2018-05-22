@@ -5,7 +5,10 @@ app.controller("LoginController", ['$scope','$window','Usuario','$location', fun
     $scope.Entrar = function() {
         try{			
 	        var acceso = Usuario.query({method:'Login',usuario:$scope.Login.Usuario,password: $scope.Login.Password}, function() {
-                $location.url('main');
+				console.log("accseso");
+				console.log(acceso.data);
+				$location.url('main');
+			
 			}, function(error) {
 				console.log(error);
 			});

@@ -21,27 +21,26 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="usuarios">
-      <EntityTypeMapping TypeName="duesModel.usuarios">
-        <MappingFragment StoreEntitySet="usuarios">
-          <ScalarProperty Name="Password" ColumnName="Password" />
-          <ScalarProperty Name="Usuario" ColumnName="Usuario" />
-          <ScalarProperty Name="Id" ColumnName="Id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="tokens">
-      <EntityTypeMapping TypeName="duesModel.tokens">
-        <MappingFragment StoreEntitySet="tokens">
-          <ScalarProperty Name="FechaUltimaModificacion" ColumnName="FechaUltimaModificacion" />
-          <ScalarProperty Name="Token" ColumnName="Token" />
-          <ScalarProperty Name="Id" ColumnName="Id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="detalle_inventario">
       <EntityTypeMapping TypeName="duesModel.detalle_inventario">
         <MappingFragment StoreEntitySet="detalle_inventario">
+          <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
+          <ScalarProperty Name="InventarioId" ColumnName="InventarioId" />
+          <ScalarProperty Name="FechaHora" ColumnName="FechaHora" />
+          <ScalarProperty Name="PicturName" ColumnName="PicturName" />
+          <ScalarProperty Name="NombreLote" ColumnName="NombreLote" />
+          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+          <ScalarProperty Name="Codebars" ColumnName="Codebars" />
+          <ScalarProperty Name="ItemName" ColumnName="ItemName" />
+          <ScalarProperty Name="ItemCode" ColumnName="ItemCode" />
+          <ScalarProperty Name="idDetalle_Inventario" ColumnName="idDetalle_Inventario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="detalle_inventario_aplicado">
+      <EntityTypeMapping TypeName="duesModel.detalle_inventario_aplicado">
+        <MappingFragment StoreEntitySet="detalle_inventario_aplicado">
+          <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
           <ScalarProperty Name="InventarioId" ColumnName="InventarioId" />
           <ScalarProperty Name="FechaHora" ColumnName="FechaHora" />
           <ScalarProperty Name="PicturName" ColumnName="PicturName" />
@@ -57,11 +56,40 @@
     <EntitySetMapping Name="inventario">
       <EntityTypeMapping TypeName="duesModel.inventario">
         <MappingFragment StoreEntitySet="inventario">
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
           <ScalarProperty Name="Modelo" ColumnName="Modelo" />
           <ScalarProperty Name="UUID" ColumnName="UUID" />
           <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
           <ScalarProperty Name="FechaInicio" ColumnName="FechaInicio" />
           <ScalarProperty Name="idInventario" ColumnName="idInventario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="inventario_aplicado">
+      <EntityTypeMapping TypeName="duesModel.inventario_aplicado">
+        <MappingFragment StoreEntitySet="inventario_aplicado">
+          <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
+          <ScalarProperty Name="FechaInicio" ColumnName="FechaInicio" />
+          <ScalarProperty Name="idInventario" ColumnName="idInventario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tokens">
+      <EntityTypeMapping TypeName="duesModel.tokens">
+        <MappingFragment StoreEntitySet="tokens">
+          <ScalarProperty Name="FechaUltimaModificacion" ColumnName="FechaUltimaModificacion" />
+          <ScalarProperty Name="Token" ColumnName="Token" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="usuarios">
+      <EntityTypeMapping TypeName="duesModel.usuarios">
+        <MappingFragment StoreEntitySet="usuarios">
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

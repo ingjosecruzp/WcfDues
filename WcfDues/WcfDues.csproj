@@ -114,6 +114,7 @@
     <Content Include="WSArticulos.svc" />
     <Content Include="WSColonias.svc" />
     <Content Include="WSInventario.svc" />
+    <Content Include="WSInventarioAplicado.svc" />
     <Content Include="WSUsuarios.svc" />
   </ItemGroup>
   <ItemGroup>
@@ -124,6 +125,9 @@
       <DependentUpon>Empresa.tt</DependentUpon>
     </Compile>
     <Compile Include="detalle_inventario.cs">
+      <DependentUpon>Empresa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="detalle_inventario_aplicado.cs">
       <DependentUpon>Empresa.tt</DependentUpon>
     </Compile>
     <Compile Include="Empresa.Context.cs">
@@ -151,10 +155,14 @@
     <Compile Include="inventario.cs">
       <DependentUpon>Empresa.tt</DependentUpon>
     </Compile>
+    <Compile Include="inventario_aplicado.cs">
+      <DependentUpon>Empresa.tt</DependentUpon>
+    </Compile>
     <Compile Include="IWSArticulos.cs" />
     <Compile Include="IWSBase.cs" />
     <Compile Include="IWSColonias.cs" />
     <Compile Include="IWSInventario.cs" />
+    <Compile Include="IWSInventarioAplicado.cs" />
     <Compile Include="IWSUsuarios.cs" />
     <Compile Include="OITM.cs">
       <DependentUpon>Sap.tt</DependentUpon>
@@ -198,6 +206,9 @@
     </Compile>
     <Compile Include="WSInventario.svc.cs">
       <DependentUpon>WSInventario.svc</DependentUpon>
+    </Compile>
+    <Compile Include="WSInventarioAplicado.svc.cs">
+      <DependentUpon>WSInventarioAplicado.svc</DependentUpon>
     </Compile>
     <Compile Include="WSUsuarios.svc.cs">
       <DependentUpon>WSUsuarios.svc</DependentUpon>

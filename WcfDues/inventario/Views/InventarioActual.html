@@ -5,6 +5,11 @@
   		</button>
 	</div>
     <div class="row">
-  		 <div id="grid1" ui-grid="{ data: myData }" ></div>
-    </div>
+  		 <div id="grid1" ui-grid="gridOptions" ui-grid-grouping ui-grid-edit ui-grid-row-edit ></div>
+	</div>
+	<div class="row">
+		<button type="button" ng-click="AplicarInventario()" class="btn btn-default" align="right" style="margin-bottom: 12px;">
+    		<span class="glyphicon glyphicon-search"></span> Aplicar inventario
+  		</button>
+	</div>
 </div>

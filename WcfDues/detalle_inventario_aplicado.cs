@@ -12,7 +12,7 @@ namespace WcfDues
     using System;
     using System.Collections.Generic;
     
-    public partial class detalle_inventario
+    public partial class detalle_inventario_aplicado
     {
         public int idDetalle_Inventario { get; set; }
         public string ItemCode { get; set; }
@@ -25,7 +25,7 @@ namespace WcfDues
         public int InventarioId { get; set; }
         public int UsuarioId { get; set; }
     
-        public virtual inventario inventario { get; set; }
         public virtual usuarios usuarios { get; set; }
+        public virtual inventario_aplicado inventario_aplicado { get; set; }
     }
 }

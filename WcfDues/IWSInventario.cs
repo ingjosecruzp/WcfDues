@@ -18,6 +18,23 @@ namespace WcfDues
            ResponseFormat = WebMessageFormat.Json,
            RequestFormat = WebMessageFormat.Json,
            Method = "POST")]
-        detalle_inventario addItem(inventario doc);
+        inventario addItem(inventario doc);
+
+
+        [OperationContract]
+        [WebInvoke(UriTemplate = "?method=getInventarioActual",
+        BodyStyle = WebMessageBodyStyle.WrappedRequest,
+        ResponseFormat = WebMessageFormat.Json,
+        RequestFormat = WebMessageFormat.Json,
+        Method = "GET")]
+        List<inventario> getInventarioActual();
+
+        [OperationContract]
+        [WebInvoke(UriTemplate = "?method=getInventarioActualDetalles&id={id}", 
+        BodyStyle = WebMessageBodyStyle.WrappedRequest,
+        ResponseFormat = WebMessageFormat.Json,
+        RequestFormat = WebMessageFormat.Json,
+        Method = "GET")]
+        List<detalle_inventario> getInventarioActualDetalles(string id);
     }
 }
