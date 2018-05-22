@@ -36,5 +36,37 @@ namespace WcfDues
             RequestFormat = WebMessageFormat.Json,
             Method = "GET")]
         List<OITM> getArticulos(string nombrearticulo,int index);
+
+        [OperationContract]
+        [WebInvoke(UriTemplate = "?method=getPrecios&itemCode={itemCode}",
+    BodyStyle = WebMessageBodyStyle.Bare,
+    ResponseFormat = WebMessageFormat.Json,
+    RequestFormat = WebMessageFormat.Json,
+    Method = "GET")]
+        List<ITM1> getPrecios(string itemCode);
+
+        [OperationContract]
+        [WebInvoke(UriTemplate = "?method=getDatosInventario&itemCode={itemCode}",
+            BodyStyle = WebMessageBodyStyle.Bare,
+            ResponseFormat = WebMessageFormat.Json,
+            RequestFormat = WebMessageFormat.Json,
+            Method = "GET")]
+        List<OITM> getDatosInventario(string itemCode);
+
+        [OperationContract]
+        [WebInvoke(UriTemplate = "?method=getListaAlmacenes",
+            BodyStyle = WebMessageBodyStyle.Bare,
+            ResponseFormat = WebMessageFormat.Json,
+            RequestFormat = WebMessageFormat.Json,
+            Method = "GET")]
+        List<OWHS> getListaAlmacenes();
+
+        [OperationContract]
+        [WebInvoke(UriTemplate = "?method=getDetalleAlmacen&itemCode={itemCode}&WhsCode={WhsCode}",
+            BodyStyle = WebMessageBodyStyle.Bare,
+            ResponseFormat = WebMessageFormat.Json,
+            RequestFormat = WebMessageFormat.Json,
+            Method = "GET")]
+        List<OITW> getDetalleAlmacen(string itemCode, string whsCode);
     }
 }

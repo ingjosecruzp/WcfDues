@@ -390,5 +390,8 @@ namespace WcfDues
         public string U_ST_UNIDADES { get; set; }
         public string U_CFDI_UNIMED { get; set; }
         public string U_CODIGO_CFDI { get; set; }
+        public string U_ST_KITCODE { get; set; }
+        public string U_DD_RAPPORT_TRA { get; set; }
+        public string U_BOY_TB_0 { get; set; }
     }
 }

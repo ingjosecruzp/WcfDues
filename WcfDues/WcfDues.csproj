@@ -158,6 +158,9 @@
     <Compile Include="inventario_aplicado.cs">
       <DependentUpon>Empresa.tt</DependentUpon>
     </Compile>
+    <Compile Include="ITM1.cs">
+      <DependentUpon>Sap.tt</DependentUpon>
+    </Compile>
     <Compile Include="IWSArticulos.cs" />
     <Compile Include="IWSBase.cs" />
     <Compile Include="IWSColonias.cs" />
@@ -168,6 +171,9 @@
       <DependentUpon>Sap.tt</DependentUpon>
     </Compile>
     <Compile Include="OITW.cs">
+      <DependentUpon>Sap.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OWHS.cs">
       <DependentUpon>Sap.tt</DependentUpon>
     </Compile>
     <Compile Include="Sap.Context.cs">

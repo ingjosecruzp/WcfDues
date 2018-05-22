@@ -106,5 +106,73 @@ namespace WcfDues
                 return null;
             }
         }
+
+        public List<ITM1> getPrecios(String itemCode)
+        {
+
+            try
+            {
+                SapEntities db = new SapEntities();
+                List<ITM1> LstPrecios = db.ITM1.Where(p => p.ItemCode == itemCode && (p.PriceList == 4 || p.PriceList == 1 || p.PriceList == 2 || p.PriceList == 3 || p.PriceList == 6 || p.PriceList == 7 || p.PriceList == 5 || p.PriceList == 14)).ToList();
+
+                return LstPrecios;
+            }
+            catch (Exception ex)
+            {
+                Error(ex, "El articulo");
+                return null;
+            }
+        }
+
+        public List<OITM> getDatosInventario(String itemCode)
+        {
+
+            try
+            {
+                SapEntities db = new SapEntities();
+                List<OITM> datosInventario = db.OITM.Where(p => p.ItemCode == itemCode).ToList();
+
+                return datosInventario;
+            }
+            catch (Exception ex)
+            {
+                Error(ex, "El articulo");
+                return null;
+            }
+        }
+
+        public List<OWHS> getListaAlmacenes()
+        {
+
+            try
+            {
+                SapEntities db = new SapEntities();
+                List<OWHS> listaAlmacenes = db.OWHS.ToList();
+
+                return listaAlmacenes;
+            }
+            catch (Exception ex)
+            {
+                Error(ex, "El articulo");
+                return null;
+            }
+        }
+
+        public List<OITW> getDetalleAlmacen(String itemCode, String whsCode)
+        {
+
+            try
+            {
+                SapEntities db = new SapEntities();
+                List<OITW> detalleAlmacen = db.OITW.Where(p => p.ItemCode == itemCode && p.WhsCode == whsCode).ToList();
+
+                return detalleAlmacen;
+            }
+            catch (Exception ex)
+            {
+                Error(ex, "El articulo");
+                return null;
+            }
+        }
     }
 }
