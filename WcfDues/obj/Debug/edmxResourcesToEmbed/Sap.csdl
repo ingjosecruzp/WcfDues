@@ -468,6 +468,7 @@
     <EntitySet Name="OITW" EntityType="Self.OITW" />
     <EntitySet Name="OWHS" EntityType="SapModel.OWHS" />
     <EntitySet Name="ITM1" EntityType="SapModel.ITM1" />
+    <EntitySet Name="OCRD" EntityType="SapModel.OCRD" />
   </EntityContainer>
   <EntityType Name="OWHS">
     <Key>
@@ -595,5 +596,367 @@
     <Property Name="Ovrwrite1" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
     <Property Name="Ovrwrite2" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
     <Property Name="BasePLNum" Type="Int16" />
+  </EntityType>
+  <EntityType Name="OCRD">
+    <Key>
+      <PropertyRef Name="CardCode" />
+    </Key>
+    <Property Name="CardCode" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="CardName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CardType" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="GroupCode" Type="Int16" />
+    <Property Name="CmpPrivate" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ZipCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="MailAddres" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="MailZipCod" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Phone1" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Phone2" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Fax" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="CntctPrsn" Type="String" MaxLength="90" FixedLength="false" Unicode="true" />
+    <Property Name="Notes" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Balance" Type="Decimal" Precision="19" Scale="6" />
+    <Property Name="ChecksBal" Type="Decimal" Precision="19" Scale="6" />
+    <Property Name="DNotesBal" Type="Decimal" Precision="19" Scale="6" />
+    <Property Name="OrdersBal" Type="Decimal" Precision="19" Scale="6" />
+    <Property Name="GroupNum" Type="Int16" />
+    <Property Name="CreditLine" Type="Decimal" Precision="19" Scale="6" />
+    <Property Name="DebtLine" Type="Decimal" Precision="19" Scale="6" />
+    <Property Name="Discount" Type="Decimal" Precision="19" Scale="6" />
+    <Property Name="VatStatus" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="LicTradNum" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Name="DdctStatus" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="DdctPrcnt" Type="Decimal" Precision="19" Scale="6" />
+    <Property Name="ValidUntil" Type="DateTime" Precision="3" />
+    <Property Name="Chrctrstcs" Type="Int32" />
+    <Property Name="ExMatchNum" Type="Int32" />
+    <Property Name="InMatchNum" Type="Int32" />
+    <Property Name="ListNum" Type="Int16" />
+    <Property Name="DNoteBalFC" Type="Decimal" Precision="19" Scale="6" />
+    <Property Name="OrderBalFC" Type="Decimal" Precision="19" Scale="6" />
+    <Property Name="DNoteBalSy" Type="Decimal" Precision="19" Scale="6" />
+    <Property Name="OrderBalSy" Type="Decimal" Precision="19" Scale="6" />
+    <Property Name="Transfered" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="BalTrnsfrd" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="IntrstRate" Type="Decimal" Precision="19" Scale="6" />
+    <Property Name="Commission" Type="Decimal" Precision="19" Scale="6" />
+    <Property Name="CommGrCode" Type="Int16" />
+    <Property Name="Free_Text" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SlpCode" Type="Int32" />
+    <Property Name="PrevYearAc" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Currency" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="RateDifAct" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="BalanceSys" Type="Decimal" Precision="19" Scale="6" />
+    <Property Name="BalanceFC" Type="Decimal" Precision="19" Scale="6" />
+    <Property Name="Protected" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Cellular" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AvrageLate" Type="Int16" />
+    <Property Name="City" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="County" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Country" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="MailCity" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="MailCounty" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="MailCountr" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="E_Mail" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Picture" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="DflAccount" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DflBranch" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BankCode" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="AddID" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Name="Pager" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="FatherCard" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="CardFName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="FatherType" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="QryGroup1" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="QryGroup2" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="QryGroup3" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="QryGroup4" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="QryGroup5" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="QryGroup6" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="QryGroup7" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="QryGroup8" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="QryGroup9" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="QryGroup10" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="QryGroup11" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="QryGroup12" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="QryGroup13" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="QryGroup14" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="QryGroup15" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="QryGroup16" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="QryGroup17" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="QryGroup18" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="QryGroup19" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="QryGroup20" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="QryGroup21" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="QryGroup22" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="QryGroup23" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="QryGroup24" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="QryGroup25" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="QryGroup26" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="QryGroup27" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="QryGroup28" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="QryGroup29" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="QryGroup30" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="QryGroup31" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="QryGroup32" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="QryGroup33" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="QryGroup34" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="QryGroup35" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="QryGroup36" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="QryGroup37" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="QryGroup38" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="QryGroup39" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="QryGroup40" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="QryGroup41" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="QryGroup42" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="QryGroup43" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="QryGroup44" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="QryGroup45" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="QryGroup46" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="QryGroup47" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="QryGroup48" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="QryGroup49" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="QryGroup50" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="QryGroup51" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="QryGroup52" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="QryGroup53" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="QryGroup54" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="QryGroup55" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="QryGroup56" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="QryGroup57" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="QryGroup58" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="QryGroup59" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="QryGroup60" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="QryGroup61" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="QryGroup62" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="QryGroup63" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="QryGroup64" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="DdctOffice" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+    <Property Name="ExportCode" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="DscntObjct" Type="Int16" />
+    <Property Name="DscntRel" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="SPGCounter" Type="Int16" />
+    <Property Name="SPPCounter" Type="Int32" />
+    <Property Name="DdctFileNo" Type="String" MaxLength="9" FixedLength="false" Unicode="true" />
+    <Property Name="SCNCounter" Type="Int16" />
+    <Property Name="MinIntrst" Type="Decimal" Precision="19" Scale="6" />
+    <Property Name="DataSource" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="OprCount" Type="Int32" />
+    <Property Name="ExemptNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Priority" Type="Int32" />
+    <Property Name="CreditCard" Type="Int16" />
+    <Property Name="CrCardNum" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Name="CardValid" Type="DateTime" Precision="3" />
+    <Property Name="UserSign" Type="Int16" />
+    <Property Name="LocMth" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="validFor" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="validFrom" Type="DateTime" Precision="3" />
+    <Property Name="validTo" Type="DateTime" Precision="3" />
+    <Property Name="frozenFor" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="frozenFrom" Type="DateTime" Precision="3" />
+    <Property Name="frozenTo" Type="DateTime" Precision="3" />
+    <Property Name="sEmployed" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="MTHCounter" Type="Int32" />
+    <Property Name="BNKCounter" Type="Int32" />
+    <Property Name="DdgKey" Type="Int32" />
+    <Property Name="DdtKey" Type="Int32" />
+    <Property Name="ValidComm" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="FrozenComm" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="chainStore" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="DiscInRet" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="State1" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="State2" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="VatGroup" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="LogInstanc" Type="Int32" />
+    <Property Name="ObjType" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Indicator" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="ShipType" Type="Int16" />
+    <Property Name="DebPayAcct" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="ShipToDef" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Block" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="MailBlock" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Name="ECVatGroup" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="Deleted" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="IBAN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DocEntry" Type="Int32" Nullable="false" />
+    <Property Name="FormCode" Type="Int32" />
+    <Property Name="Box1099" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="PymCode" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="BackOrder" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="PartDelivr" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="DunnLevel" Type="Int32" />
+    <Property Name="DunnDate" Type="DateTime" Precision="3" />
+    <Property Name="BlockDunn" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="BankCountr" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="CollecAuth" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="DME" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="InstrucKey" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="SinglePaym" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ISRBillId" Type="String" MaxLength="9" FixedLength="false" Unicode="true" />
+    <Property Name="PaymBlock" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="RefDetails" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="HouseBank" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="OwnerIdNum" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="PyBlckDesc" Type="Int32" />
+    <Property Name="HousBnkCry" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="HousBnkAct" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="HousBnkBrn" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ProjectCod" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="SysMatchNo" Type="Int32" />
+    <Property Name="VatIdUnCmp" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Name="AgentCode" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Name="TolrncDays" Type="Int16" />
+    <Property Name="SelfInvoic" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="DeferrTax" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="LetterNum" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="MaxAmount" Type="Decimal" Precision="19" Scale="6" />
+    <Property Name="FromDate" Type="DateTime" Precision="3" />
+    <Property Name="ToDate" Type="DateTime" Precision="3" />
+    <Property Name="WTLiable" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CrtfcateNO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ExpireDate" Type="DateTime" Precision="3" />
+    <Property Name="NINum" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="AccCritria" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="WTCode" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Name="Equ" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="HldCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ConnBP" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="MltMthNum" Type="Int32" />
+    <Property Name="TypWTReprt" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="VATRegNum" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Name="RepName" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Industry" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Business" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="WTTaxCat" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IsDomestic" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="IsResident" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="AutoCalBCG" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="OtrCtlAcct" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="AliasName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Building" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="MailBuildi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="BoEPrsnt" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="BoEDiscnt" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="BoEOnClct" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="UnpaidBoE" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="ITWTCode" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Name="DunTerm" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="ChannlBP" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="DfTcnician" Type="Int32" />
+    <Property Name="Territory" Type="Int32" />
+    <Property Name="BillToDef" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DpmClear" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="IntrntSite" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="LangCode" Type="Int32" />
+    <Property Name="HousActKey" Type="Int32" />
+    <Property Name="Profession" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CDPNum" Type="Int16" />
+    <Property Name="DflBankKey" Type="Int32" />
+    <Property Name="BCACode" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="UseShpdGd" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="RegNum" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Name="VerifNum" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Name="BankCtlKey" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="HousCtlKey" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="AddrType" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="InsurOp347" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="MailAddrTy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="StreetNo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="MailStrNo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="TaxRndRule" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="VendTID" Type="Int32" />
+    <Property Name="ThreshOver" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="SurOver" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="VendorOcup" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="OpCode347" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="DpmIntAct" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="ResidenNum" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="UserSign2" Type="Int16" />
+    <Property Name="PlngGroup" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="VatIDNum" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Name="Affiliate" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="MivzExpSts" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="HierchDdct" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CertWHT" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CertBKeep" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="WHShaamGrp" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="IndustryC" Type="Int32" />
+    <Property Name="DatevAcct" Type="Int32" />
+    <Property Name="DatevFirst" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="GTSRegNum" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="GTSBankAct" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="GTSBilAddr" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="HsBnkSwift" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="HsBnkIBAN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DflSwift" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AutoPost" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="IntrAcc" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="FeeAcc" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="CpnNo" Type="Int32" />
+    <Property Name="NTSWebSite" Type="Int16" />
+    <Property Name="DflIBAN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Series" Type="Int16" />
+    <Property Name="Number" Type="Int32" />
+    <Property Name="EDocExpFrm" Type="Int32" />
+    <Property Name="TaxIdIdent" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Attachment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AtcEntry" Type="Int32" />
+    <Property Name="DiscRel" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="NoDiscount" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="SCAdjust" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="DflAgrmnt" Type="Int32" />
+    <Property Name="GlblLocNum" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SenderID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RcpntID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MainUsage" Type="Int32" />
+    <Property Name="SefazCheck" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="free312" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="free313" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="DateFrom" Type="DateTime" Precision="3" />
+    <Property Name="DateTill" Type="DateTime" Precision="3" />
+    <Property Name="RelCode" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="OKATO" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+    <Property Name="OKTMO" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="KBKCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="TypeOfOp" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="OwnerCode" Type="Int32" />
+    <Property Name="MandateID" Type="String" MaxLength="35" FixedLength="false" Unicode="true" />
+    <Property Name="SignDate" Type="DateTime" Precision="3" />
+    <Property Name="Remark1" Type="Int32" />
+    <Property Name="ConCerti" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="TpCusPres" Type="Int32" />
+    <Property Name="RoleTypCod" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="BlockComm" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="EmplymntCt" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="ExcptnlEvt" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ExpnPrfFnd" Type="Decimal" Precision="19" Scale="6" />
+    <Property Name="EdrsFromBP" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="EdrsToBP" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CreateTS" Type="Int32" />
+    <Property Name="UpdateTS" Type="Int32" />
+    <Property Name="EDocGenTyp" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="U_Agente" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="U_Ejecutivo" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="U_CODIGO" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Name="U_BXP_EINV" Type="String" MaxLength="254" FixedLength="false" Unicode="true" />
+    <Property Name="U_BXP_Addenda" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="U_Metodo_de_pago" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="U_Cuenta" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="U_Metodo_de_pago_2" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="U_cuenta_2" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="U_Cuenta_Bancaria" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="U_Codigo_BancoSN" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="U_BOY_23_QCCS" Type="String" MaxLength="254" FixedLength="false" Unicode="true" />
+    <Property Name="U_BOY_23_ADPRTCD" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="U_BOY_TB_0" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="U_TipoProveedor" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+    <Property Name="U_TiempoEntrega" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="U_Procedencia" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="U_TipoTextil" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="U_FormaPago" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="U_EfectividadFallas" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
   </EntityType>
 </Schema>

@@ -82,7 +82,7 @@ namespace WcfDues
                 throw;
             }
         }
-        public List<OITM> getArticulos(string nombrearticulo,int index)
+        public List<OITM> getArticulos(string nombrearticulo,int index, int tipo)
         {
             try
             {
@@ -93,10 +93,36 @@ namespace WcfDues
 
                 //List<OITM> LstArticulos = db.OITM.Where(p => p.ItemName.Contains(nombrearticulo)).ToList();
 
-                List<OITM> LstArticulos = db.OITM.Where(p => p.ItemName.Contains(nombrearticulo)).OrderBy(o => o.ItemName).Skip(index).Take(15) .ToList();
+                List<OITM> LstArticulos = null;
+
+                if (tipo==1) { LstArticulos = db.OITM.Where(p => p.ItemCode.Contains(nombrearticulo)).OrderBy(o => o.ItemName).Skip(index).Take(15).ToList(); }
+                else { LstArticulos = db.OITM.Where(p => p.ItemName.Contains(nombrearticulo)).OrderBy(o => o.ItemName).Skip(index).Take(15).ToList(); }
 
 
                 return LstArticulos;
+            }
+            catch (Exception ex)
+            {
+
+
+                Error(ex, "El articulo");
+                return null;
+            }
+        }
+
+        public List<OCRD> getNombreProveedor(string codigoproveedor)
+        {
+            try
+            {
+                SapEntities db = new SapEntities();
+                
+
+                List<OCRD> nombreProveedor = null;
+
+                nombreProveedor = db.OCRD.Where(p => p.CardCode==codigoproveedor).OrderBy(o => o.CardCode).ToList();
+
+
+                return nombreProveedor;
             }
             catch (Exception ex)
             {

@@ -30,12 +30,20 @@ namespace WcfDues
         List<string> getImagen(string nombreimagen);
 
         [OperationContract]
-        [WebInvoke(UriTemplate = "?method=getArticulos&Nombre={nombrearticulo}&Index={index}",
+        [WebInvoke(UriTemplate = "?method=getArticulos&Nombre={nombrearticulo}&Index={index}&Tipo={tipo}",
             BodyStyle = WebMessageBodyStyle.Bare,
             ResponseFormat = WebMessageFormat.Json,
             RequestFormat = WebMessageFormat.Json,
             Method = "GET")]
-        List<OITM> getArticulos(string nombrearticulo,int index);
+        List<OITM> getArticulos(string nombrearticulo, int index, int tipo);
+
+        [OperationContract]
+        [WebInvoke(UriTemplate = "?method=getNombreProveedor&codigoProveedor={codigoproveedor}",
+            BodyStyle = WebMessageBodyStyle.Bare,
+            ResponseFormat = WebMessageFormat.Json,
+            RequestFormat = WebMessageFormat.Json,
+            Method = "GET")]
+        List<OCRD> getNombreProveedor(string codigoproveedor);
 
         [OperationContract]
         [WebInvoke(UriTemplate = "?method=getPrecios&itemCode={itemCode}",

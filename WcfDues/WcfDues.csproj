@@ -167,6 +167,9 @@
     <Compile Include="IWSInventario.cs" />
     <Compile Include="IWSInventarioAplicado.cs" />
     <Compile Include="IWSUsuarios.cs" />
+    <Compile Include="OCRD.cs">
+      <DependentUpon>Sap.tt</DependentUpon>
+    </Compile>
     <Compile Include="OITM.cs">
       <DependentUpon>Sap.tt</DependentUpon>
     </Compile>
