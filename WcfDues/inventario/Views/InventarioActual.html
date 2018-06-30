@@ -1,12 +1,15 @@
 <div class="row show-grid">
+	<!-- div con el botón para abrir el modal de selección de inventarios -->
 	<div class="row">
 		<button type="button" ng-click="TomaInventario()" class="btn btn-default" align="right" style="margin-bottom: 12px;">
     		<span class="glyphicon glyphicon-search"></span> Toma de inventario
   		</button>
 	</div>
+	<!-- GRID CON LA INFORMACIÓN DE LOS INVENTARIOS SELECCIONADOS -->
     <div class="row">
-  		 <div id="grid1" ui-grid="gridOptions" ui-grid-grouping ui-grid-edit ui-grid-row-edit ></div>
+  		 <div id="grid1" ui-grid="gridOptions" ui-grid-grouping ui-grid-edit ui-grid-row-edit ui-grid-exporter></div>
 	</div>
+	<!-- DIV CON EL BOTÓN PARA APLICAR EL INVENTARIO -->
 	<div class="row">
 		<button type="button" ng-click="AplicarInventario()" class="btn btn-default" align="right" style="margin-bottom: 12px;">
     		<span class="glyphicon glyphicon-search"></span> Aplicar inventario

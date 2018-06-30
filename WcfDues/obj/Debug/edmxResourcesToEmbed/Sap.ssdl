@@ -383,6 +383,92 @@
     <Property Name="U_FormaPago" Type="nvarchar" MaxLength="30" />
     <Property Name="U_EfectividadFallas" Type="nvarchar" MaxLength="30" />
   </EntityType>
+  <EntityType Name="OITB">
+    <Key>
+      <PropertyRef Name="ItmsGrpCod" />
+    </Key>
+    <Property Name="ItmsGrpCod" Type="smallint" Nullable="false" />
+    <Property Name="ItmsGrpNam" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Locked" Type="char" MaxLength="1" />
+    <Property Name="DataSource" Type="char" MaxLength="1" />
+    <Property Name="UserSign" Type="smallint" />
+    <Property Name="BalInvntAc" Type="nvarchar" MaxLength="15" />
+    <Property Name="SaleCostAc" Type="nvarchar" MaxLength="15" />
+    <Property Name="TransferAc" Type="nvarchar" MaxLength="15" />
+    <Property Name="RevenuesAc" Type="nvarchar" MaxLength="15" />
+    <Property Name="VarianceAc" Type="nvarchar" MaxLength="15" />
+    <Property Name="DecreasAc" Type="nvarchar" MaxLength="15" />
+    <Property Name="IncreasAc" Type="nvarchar" MaxLength="15" />
+    <Property Name="ReturnAc" Type="nvarchar" MaxLength="15" />
+    <Property Name="ExpensesAc" Type="nvarchar" MaxLength="15" />
+    <Property Name="EURevenuAc" Type="nvarchar" MaxLength="15" />
+    <Property Name="EUExpensAc" Type="nvarchar" MaxLength="15" />
+    <Property Name="FrRevenuAc" Type="nvarchar" MaxLength="15" />
+    <Property Name="FrExpensAc" Type="nvarchar" MaxLength="15" />
+    <Property Name="ExmptIncom" Type="nvarchar" MaxLength="15" />
+    <Property Name="CycleCode" Type="smallint" />
+    <Property Name="Alert" Type="char" MaxLength="1" />
+    <Property Name="PriceDifAc" Type="nvarchar" MaxLength="15" />
+    <Property Name="ExchangeAc" Type="nvarchar" MaxLength="15" />
+    <Property Name="BalanceAcc" Type="nvarchar" MaxLength="15" />
+    <Property Name="PurchaseAc" Type="nvarchar" MaxLength="15" />
+    <Property Name="PAReturnAc" Type="nvarchar" MaxLength="15" />
+    <Property Name="PurchOfsAc" Type="nvarchar" MaxLength="15" />
+    <Property Name="ShpdGdsAct" Type="nvarchar" MaxLength="15" />
+    <Property Name="VatRevAct" Type="nvarchar" MaxLength="15" />
+    <Property Name="DecresGlAc" Type="nvarchar" MaxLength="15" />
+    <Property Name="IncresGlAc" Type="nvarchar" MaxLength="15" />
+    <Property Name="InvntSys" Type="char" MaxLength="1" />
+    <Property Name="PlaningSys" Type="char" MaxLength="1" />
+    <Property Name="PrcrmntMtd" Type="char" MaxLength="1" />
+    <Property Name="OrdrIntrvl" Type="smallint" />
+    <Property Name="OrdrMulti" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="MinOrdrQty" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="LeadTime" Type="int" />
+    <Property Name="StokRvlAct" Type="nvarchar" MaxLength="15" />
+    <Property Name="StkOffsAct" Type="nvarchar" MaxLength="15" />
+    <Property Name="WipAcct" Type="nvarchar" MaxLength="15" />
+    <Property Name="WipVarAcct" Type="nvarchar" MaxLength="15" />
+    <Property Name="CostRvlAct" Type="nvarchar" MaxLength="15" />
+    <Property Name="CstOffsAct" Type="nvarchar" MaxLength="15" />
+    <Property Name="ExpClrAct" Type="nvarchar" MaxLength="15" />
+    <Property Name="ExpOfstAct" Type="nvarchar" MaxLength="15" />
+    <Property Name="Object" Type="nvarchar" MaxLength="20" />
+    <Property Name="logInstanc" Type="int" />
+    <Property Name="createDate" Type="datetime" />
+    <Property Name="userSign2" Type="smallint" />
+    <Property Name="updateDate" Type="datetime" />
+    <Property Name="ARCMAct" Type="nvarchar" MaxLength="15" />
+    <Property Name="ARCMFrnAct" Type="nvarchar" MaxLength="15" />
+    <Property Name="ARCMEUAct" Type="nvarchar" MaxLength="15" />
+    <Property Name="ARCMExpAct" Type="nvarchar" MaxLength="15" />
+    <Property Name="APCMAct" Type="nvarchar" MaxLength="15" />
+    <Property Name="APCMFrnAct" Type="nvarchar" MaxLength="15" />
+    <Property Name="APCMEUAct" Type="nvarchar" MaxLength="15" />
+    <Property Name="RevRetAct" Type="nvarchar" MaxLength="15" />
+    <Property Name="ItemClass" Type="char" MaxLength="1" />
+    <Property Name="OSvcCode" Type="int" />
+    <Property Name="ISvcCode" Type="int" />
+    <Property Name="ServiceGrp" Type="int" />
+    <Property Name="NCMCode" Type="int" />
+    <Property Name="MatType" Type="nvarchar" MaxLength="3" />
+    <Property Name="MatGrp" Type="int" />
+    <Property Name="ProductSrc" Type="nvarchar" MaxLength="2" />
+    <Property Name="NegStckAct" Type="nvarchar" MaxLength="15" />
+    <Property Name="StkInTnAct" Type="nvarchar" MaxLength="15" />
+    <Property Name="PurBalAct" Type="nvarchar" MaxLength="15" />
+    <Property Name="WhICenAct" Type="nvarchar" MaxLength="15" />
+    <Property Name="WhOCenAct" Type="nvarchar" MaxLength="15" />
+    <Property Name="WipOffset" Type="nvarchar" MaxLength="15" />
+    <Property Name="StockOffst" Type="nvarchar" MaxLength="15" />
+    <Property Name="UgpEntry" Type="int" />
+    <Property Name="IUoMEntry" Type="int" />
+    <Property Name="ToleranDay" Type="int" />
+    <Property Name="RuleCode" Type="nvarchar" MaxLength="2" />
+    <Property Name="CompoWH" Type="char" MaxLength="1" />
+    <Property Name="FreeChrgSA" Type="nvarchar" MaxLength="15" />
+    <Property Name="FreeChrgPU" Type="nvarchar" MaxLength="15" />
+  </EntityType>
   <EntityType Name="OITM">
     <Key>
       <PropertyRef Name="ItemCode" />
@@ -955,6 +1041,7 @@
   <EntityContainer Name="SapModelStoreContainer">
     <EntitySet Name="ITM1" EntityType="Self.ITM1" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="OCRD" EntityType="Self.OCRD" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OITB" EntityType="Self.OITB" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="OITM" EntityType="Self.OITM" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="OITW" EntityType="Self.OITW" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="OWHS" EntityType="Self.OWHS" Schema="dbo" store:Type="Tables" />

@@ -388,6 +388,92 @@
           <Property Name="U_FormaPago" Type="nvarchar" MaxLength="30" />
           <Property Name="U_EfectividadFallas" Type="nvarchar" MaxLength="30" />
         </EntityType>
+        <EntityType Name="OITB">
+          <Key>
+            <PropertyRef Name="ItmsGrpCod" />
+          </Key>
+          <Property Name="ItmsGrpCod" Type="smallint" Nullable="false" />
+          <Property Name="ItmsGrpNam" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Locked" Type="char" MaxLength="1" />
+          <Property Name="DataSource" Type="char" MaxLength="1" />
+          <Property Name="UserSign" Type="smallint" />
+          <Property Name="BalInvntAc" Type="nvarchar" MaxLength="15" />
+          <Property Name="SaleCostAc" Type="nvarchar" MaxLength="15" />
+          <Property Name="TransferAc" Type="nvarchar" MaxLength="15" />
+          <Property Name="RevenuesAc" Type="nvarchar" MaxLength="15" />
+          <Property Name="VarianceAc" Type="nvarchar" MaxLength="15" />
+          <Property Name="DecreasAc" Type="nvarchar" MaxLength="15" />
+          <Property Name="IncreasAc" Type="nvarchar" MaxLength="15" />
+          <Property Name="ReturnAc" Type="nvarchar" MaxLength="15" />
+          <Property Name="ExpensesAc" Type="nvarchar" MaxLength="15" />
+          <Property Name="EURevenuAc" Type="nvarchar" MaxLength="15" />
+          <Property Name="EUExpensAc" Type="nvarchar" MaxLength="15" />
+          <Property Name="FrRevenuAc" Type="nvarchar" MaxLength="15" />
+          <Property Name="FrExpensAc" Type="nvarchar" MaxLength="15" />
+          <Property Name="ExmptIncom" Type="nvarchar" MaxLength="15" />
+          <Property Name="CycleCode" Type="smallint" />
+          <Property Name="Alert" Type="char" MaxLength="1" />
+          <Property Name="PriceDifAc" Type="nvarchar" MaxLength="15" />
+          <Property Name="ExchangeAc" Type="nvarchar" MaxLength="15" />
+          <Property Name="BalanceAcc" Type="nvarchar" MaxLength="15" />
+          <Property Name="PurchaseAc" Type="nvarchar" MaxLength="15" />
+          <Property Name="PAReturnAc" Type="nvarchar" MaxLength="15" />
+          <Property Name="PurchOfsAc" Type="nvarchar" MaxLength="15" />
+          <Property Name="ShpdGdsAct" Type="nvarchar" MaxLength="15" />
+          <Property Name="VatRevAct" Type="nvarchar" MaxLength="15" />
+          <Property Name="DecresGlAc" Type="nvarchar" MaxLength="15" />
+          <Property Name="IncresGlAc" Type="nvarchar" MaxLength="15" />
+          <Property Name="InvntSys" Type="char" MaxLength="1" />
+          <Property Name="PlaningSys" Type="char" MaxLength="1" />
+          <Property Name="PrcrmntMtd" Type="char" MaxLength="1" />
+          <Property Name="OrdrIntrvl" Type="smallint" />
+          <Property Name="OrdrMulti" Type="numeric" Precision="19" Scale="6" />
+          <Property Name="MinOrdrQty" Type="numeric" Precision="19" Scale="6" />
+          <Property Name="LeadTime" Type="int" />
+          <Property Name="StokRvlAct" Type="nvarchar" MaxLength="15" />
+          <Property Name="StkOffsAct" Type="nvarchar" MaxLength="15" />
+          <Property Name="WipAcct" Type="nvarchar" MaxLength="15" />
+          <Property Name="WipVarAcct" Type="nvarchar" MaxLength="15" />
+          <Property Name="CostRvlAct" Type="nvarchar" MaxLength="15" />
+          <Property Name="CstOffsAct" Type="nvarchar" MaxLength="15" />
+          <Property Name="ExpClrAct" Type="nvarchar" MaxLength="15" />
+          <Property Name="ExpOfstAct" Type="nvarchar" MaxLength="15" />
+          <Property Name="Object" Type="nvarchar" MaxLength="20" />
+          <Property Name="logInstanc" Type="int" />
+          <Property Name="createDate" Type="datetime" />
+          <Property Name="userSign2" Type="smallint" />
+          <Property Name="updateDate" Type="datetime" />
+          <Property Name="ARCMAct" Type="nvarchar" MaxLength="15" />
+          <Property Name="ARCMFrnAct" Type="nvarchar" MaxLength="15" />
+          <Property Name="ARCMEUAct" Type="nvarchar" MaxLength="15" />
+          <Property Name="ARCMExpAct" Type="nvarchar" MaxLength="15" />
+          <Property Name="APCMAct" Type="nvarchar" MaxLength="15" />
+          <Property Name="APCMFrnAct" Type="nvarchar" MaxLength="15" />
+          <Property Name="APCMEUAct" Type="nvarchar" MaxLength="15" />
+          <Property Name="RevRetAct" Type="nvarchar" MaxLength="15" />
+          <Property Name="ItemClass" Type="char" MaxLength="1" />
+          <Property Name="OSvcCode" Type="int" />
+          <Property Name="ISvcCode" Type="int" />
+          <Property Name="ServiceGrp" Type="int" />
+          <Property Name="NCMCode" Type="int" />
+          <Property Name="MatType" Type="nvarchar" MaxLength="3" />
+          <Property Name="MatGrp" Type="int" />
+          <Property Name="ProductSrc" Type="nvarchar" MaxLength="2" />
+          <Property Name="NegStckAct" Type="nvarchar" MaxLength="15" />
+          <Property Name="StkInTnAct" Type="nvarchar" MaxLength="15" />
+          <Property Name="PurBalAct" Type="nvarchar" MaxLength="15" />
+          <Property Name="WhICenAct" Type="nvarchar" MaxLength="15" />
+          <Property Name="WhOCenAct" Type="nvarchar" MaxLength="15" />
+          <Property Name="WipOffset" Type="nvarchar" MaxLength="15" />
+          <Property Name="StockOffst" Type="nvarchar" MaxLength="15" />
+          <Property Name="UgpEntry" Type="int" />
+          <Property Name="IUoMEntry" Type="int" />
+          <Property Name="ToleranDay" Type="int" />
+          <Property Name="RuleCode" Type="nvarchar" MaxLength="2" />
+          <Property Name="CompoWH" Type="char" MaxLength="1" />
+          <Property Name="FreeChrgSA" Type="nvarchar" MaxLength="15" />
+          <Property Name="FreeChrgPU" Type="nvarchar" MaxLength="15" />
+        </EntityType>
         <EntityType Name="OITM">
           <Key>
             <PropertyRef Name="ItemCode" />
@@ -960,6 +1046,7 @@
         <EntityContainer Name="SapModelStoreContainer">
           <EntitySet Name="ITM1" EntityType="Self.ITM1" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="OCRD" EntityType="Self.OCRD" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OITB" EntityType="Self.OITB" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="OITM" EntityType="Self.OITM" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="OITW" EntityType="Self.OITW" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="OWHS" EntityType="Self.OWHS" Schema="dbo" store:Type="Tables" />
@@ -1437,6 +1524,7 @@
           <EntitySet Name="OWHS" EntityType="SapModel.OWHS" />
           <EntitySet Name="ITM1" EntityType="SapModel.ITM1" />
           <EntitySet Name="OCRD" EntityType="SapModel.OCRD" />
+          <EntitySet Name="OITB" EntityType="SapModel.OITB" />
         </EntityContainer>
         <EntityType Name="OWHS">
           <Key>
@@ -1926,6 +2014,92 @@
           <Property Name="U_TipoTextil" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="U_FormaPago" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="U_EfectividadFallas" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="OITB">
+          <Key>
+            <PropertyRef Name="ItmsGrpCod" />
+          </Key>
+          <Property Name="ItmsGrpCod" Type="Int16" Nullable="false" />
+          <Property Name="ItmsGrpNam" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Locked" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="DataSource" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="UserSign" Type="Int16" />
+          <Property Name="BalInvntAc" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="SaleCostAc" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="TransferAc" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="RevenuesAc" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="VarianceAc" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="DecreasAc" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="IncreasAc" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="ReturnAc" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="ExpensesAc" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="EURevenuAc" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="EUExpensAc" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="FrRevenuAc" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="FrExpensAc" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="ExmptIncom" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="CycleCode" Type="Int16" />
+          <Property Name="Alert" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="PriceDifAc" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="ExchangeAc" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="BalanceAcc" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="PurchaseAc" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="PAReturnAc" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="PurchOfsAc" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="ShpdGdsAct" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="VatRevAct" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="DecresGlAc" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="IncresGlAc" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="InvntSys" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="PlaningSys" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="PrcrmntMtd" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="OrdrIntrvl" Type="Int16" />
+          <Property Name="OrdrMulti" Type="Decimal" Precision="19" Scale="6" />
+          <Property Name="MinOrdrQty" Type="Decimal" Precision="19" Scale="6" />
+          <Property Name="LeadTime" Type="Int32" />
+          <Property Name="StokRvlAct" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="StkOffsAct" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="WipAcct" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="WipVarAcct" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="CostRvlAct" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="CstOffsAct" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="ExpClrAct" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="ExpOfstAct" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Object" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="logInstanc" Type="Int32" />
+          <Property Name="createDate" Type="DateTime" Precision="3" />
+          <Property Name="userSign2" Type="Int16" />
+          <Property Name="updateDate" Type="DateTime" Precision="3" />
+          <Property Name="ARCMAct" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="ARCMFrnAct" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="ARCMEUAct" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="ARCMExpAct" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="APCMAct" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="APCMFrnAct" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="APCMEUAct" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="RevRetAct" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="ItemClass" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="OSvcCode" Type="Int32" />
+          <Property Name="ISvcCode" Type="Int32" />
+          <Property Name="ServiceGrp" Type="Int32" />
+          <Property Name="NCMCode" Type="Int32" />
+          <Property Name="MatType" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="MatGrp" Type="Int32" />
+          <Property Name="ProductSrc" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="NegStckAct" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="StkInTnAct" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="PurBalAct" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="WhICenAct" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="WhOCenAct" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="WipOffset" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="StockOffst" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="UgpEntry" Type="Int32" />
+          <Property Name="IUoMEntry" Type="Int32" />
+          <Property Name="ToleranDay" Type="Int32" />
+          <Property Name="RuleCode" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="CompoWH" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="FreeChrgSA" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="FreeChrgPU" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -2885,6 +3059,93 @@
                 <ScalarProperty Name="CardType" ColumnName="CardType" />
                 <ScalarProperty Name="CardName" ColumnName="CardName" />
                 <ScalarProperty Name="CardCode" ColumnName="CardCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OITB">
+            <EntityTypeMapping TypeName="SapModel.OITB">
+              <MappingFragment StoreEntitySet="OITB">
+                <ScalarProperty Name="FreeChrgPU" ColumnName="FreeChrgPU" />
+                <ScalarProperty Name="FreeChrgSA" ColumnName="FreeChrgSA" />
+                <ScalarProperty Name="CompoWH" ColumnName="CompoWH" />
+                <ScalarProperty Name="RuleCode" ColumnName="RuleCode" />
+                <ScalarProperty Name="ToleranDay" ColumnName="ToleranDay" />
+                <ScalarProperty Name="IUoMEntry" ColumnName="IUoMEntry" />
+                <ScalarProperty Name="UgpEntry" ColumnName="UgpEntry" />
+                <ScalarProperty Name="StockOffst" ColumnName="StockOffst" />
+                <ScalarProperty Name="WipOffset" ColumnName="WipOffset" />
+                <ScalarProperty Name="WhOCenAct" ColumnName="WhOCenAct" />
+                <ScalarProperty Name="WhICenAct" ColumnName="WhICenAct" />
+                <ScalarProperty Name="PurBalAct" ColumnName="PurBalAct" />
+                <ScalarProperty Name="StkInTnAct" ColumnName="StkInTnAct" />
+                <ScalarProperty Name="NegStckAct" ColumnName="NegStckAct" />
+                <ScalarProperty Name="ProductSrc" ColumnName="ProductSrc" />
+                <ScalarProperty Name="MatGrp" ColumnName="MatGrp" />
+                <ScalarProperty Name="MatType" ColumnName="MatType" />
+                <ScalarProperty Name="NCMCode" ColumnName="NCMCode" />
+                <ScalarProperty Name="ServiceGrp" ColumnName="ServiceGrp" />
+                <ScalarProperty Name="ISvcCode" ColumnName="ISvcCode" />
+                <ScalarProperty Name="OSvcCode" ColumnName="OSvcCode" />
+                <ScalarProperty Name="ItemClass" ColumnName="ItemClass" />
+                <ScalarProperty Name="RevRetAct" ColumnName="RevRetAct" />
+                <ScalarProperty Name="APCMEUAct" ColumnName="APCMEUAct" />
+                <ScalarProperty Name="APCMFrnAct" ColumnName="APCMFrnAct" />
+                <ScalarProperty Name="APCMAct" ColumnName="APCMAct" />
+                <ScalarProperty Name="ARCMExpAct" ColumnName="ARCMExpAct" />
+                <ScalarProperty Name="ARCMEUAct" ColumnName="ARCMEUAct" />
+                <ScalarProperty Name="ARCMFrnAct" ColumnName="ARCMFrnAct" />
+                <ScalarProperty Name="ARCMAct" ColumnName="ARCMAct" />
+                <ScalarProperty Name="updateDate" ColumnName="updateDate" />
+                <ScalarProperty Name="userSign2" ColumnName="userSign2" />
+                <ScalarProperty Name="createDate" ColumnName="createDate" />
+                <ScalarProperty Name="logInstanc" ColumnName="logInstanc" />
+                <ScalarProperty Name="Object" ColumnName="Object" />
+                <ScalarProperty Name="ExpOfstAct" ColumnName="ExpOfstAct" />
+                <ScalarProperty Name="ExpClrAct" ColumnName="ExpClrAct" />
+                <ScalarProperty Name="CstOffsAct" ColumnName="CstOffsAct" />
+                <ScalarProperty Name="CostRvlAct" ColumnName="CostRvlAct" />
+                <ScalarProperty Name="WipVarAcct" ColumnName="WipVarAcct" />
+                <ScalarProperty Name="WipAcct" ColumnName="WipAcct" />
+                <ScalarProperty Name="StkOffsAct" ColumnName="StkOffsAct" />
+                <ScalarProperty Name="StokRvlAct" ColumnName="StokRvlAct" />
+                <ScalarProperty Name="LeadTime" ColumnName="LeadTime" />
+                <ScalarProperty Name="MinOrdrQty" ColumnName="MinOrdrQty" />
+                <ScalarProperty Name="OrdrMulti" ColumnName="OrdrMulti" />
+                <ScalarProperty Name="OrdrIntrvl" ColumnName="OrdrIntrvl" />
+                <ScalarProperty Name="PrcrmntMtd" ColumnName="PrcrmntMtd" />
+                <ScalarProperty Name="PlaningSys" ColumnName="PlaningSys" />
+                <ScalarProperty Name="InvntSys" ColumnName="InvntSys" />
+                <ScalarProperty Name="IncresGlAc" ColumnName="IncresGlAc" />
+                <ScalarProperty Name="DecresGlAc" ColumnName="DecresGlAc" />
+                <ScalarProperty Name="VatRevAct" ColumnName="VatRevAct" />
+                <ScalarProperty Name="ShpdGdsAct" ColumnName="ShpdGdsAct" />
+                <ScalarProperty Name="PurchOfsAc" ColumnName="PurchOfsAc" />
+                <ScalarProperty Name="PAReturnAc" ColumnName="PAReturnAc" />
+                <ScalarProperty Name="PurchaseAc" ColumnName="PurchaseAc" />
+                <ScalarProperty Name="BalanceAcc" ColumnName="BalanceAcc" />
+                <ScalarProperty Name="ExchangeAc" ColumnName="ExchangeAc" />
+                <ScalarProperty Name="PriceDifAc" ColumnName="PriceDifAc" />
+                <ScalarProperty Name="Alert" ColumnName="Alert" />
+                <ScalarProperty Name="CycleCode" ColumnName="CycleCode" />
+                <ScalarProperty Name="ExmptIncom" ColumnName="ExmptIncom" />
+                <ScalarProperty Name="FrExpensAc" ColumnName="FrExpensAc" />
+                <ScalarProperty Name="FrRevenuAc" ColumnName="FrRevenuAc" />
+                <ScalarProperty Name="EUExpensAc" ColumnName="EUExpensAc" />
+                <ScalarProperty Name="EURevenuAc" ColumnName="EURevenuAc" />
+                <ScalarProperty Name="ExpensesAc" ColumnName="ExpensesAc" />
+                <ScalarProperty Name="ReturnAc" ColumnName="ReturnAc" />
+                <ScalarProperty Name="IncreasAc" ColumnName="IncreasAc" />
+                <ScalarProperty Name="DecreasAc" ColumnName="DecreasAc" />
+                <ScalarProperty Name="VarianceAc" ColumnName="VarianceAc" />
+                <ScalarProperty Name="RevenuesAc" ColumnName="RevenuesAc" />
+                <ScalarProperty Name="TransferAc" ColumnName="TransferAc" />
+                <ScalarProperty Name="SaleCostAc" ColumnName="SaleCostAc" />
+                <ScalarProperty Name="BalInvntAc" ColumnName="BalInvntAc" />
+                <ScalarProperty Name="UserSign" ColumnName="UserSign" />
+                <ScalarProperty Name="DataSource" ColumnName="DataSource" />
+                <ScalarProperty Name="Locked" ColumnName="Locked" />
+                <ScalarProperty Name="ItmsGrpNam" ColumnName="ItmsGrpNam" />
+                <ScalarProperty Name="ItmsGrpCod" ColumnName="ItmsGrpCod" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

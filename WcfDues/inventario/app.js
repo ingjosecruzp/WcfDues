@@ -1,4 +1,4 @@
-var app = angular.module("InventarioDues", ['ngRoute','ngAnimate', 'ngSanitize','ngTouch','ngResource','ui.bootstrap','ui.grid', 'ui.grid.selection', 'ui.grid.cellNav','ui.grid.grouping', 'ui.grid.edit', 'ui.grid.rowEdit']);
+var app = angular.module("InventarioDues", ['ngRoute','ngAnimate', 'ngSanitize','ngTouch','ngResource','ui.bootstrap','ui.grid', 'ui.grid.selection', 'ui.grid.cellNav','ui.grid.grouping', 'ui.grid.edit', 'ui.grid.rowEdit','ui.grid.exporter']);
 
 app.config(function($routeProvider,$httpProvider) {
     //Intercepta las petciones realizadas por $resource
@@ -40,9 +40,9 @@ app.config(function($routeProvider,$httpProvider) {
 //Variables Globales
 app.value('Variables',{
     //IpServidor: '192.168.1.47:80/WcfDues'
-    //IpServidor: 'localhost:8080'
+    IpServidor: 'localhost:8080'
     //IpServidor: 'duestextil.fortiddns.com:8020/WcfDues'
-    IpServidor: '200.52.220.238:8082'
+    //IpServidor: '200.52.220.238:8082'
 });
 
 //Modifica la referencia cirulares de las peticiones entrantes

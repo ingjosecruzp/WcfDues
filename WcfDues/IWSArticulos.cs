@@ -46,6 +46,14 @@ namespace WcfDues
         List<OCRD> getNombreProveedor(string codigoproveedor);
 
         [OperationContract]
+        [WebInvoke(UriTemplate = "?method=getGrupoArticulo&codigoGrupo={codigogrupo}",
+            BodyStyle = WebMessageBodyStyle.Bare,
+            ResponseFormat = WebMessageFormat.Json,
+            RequestFormat = WebMessageFormat.Json,
+            Method = "GET")]
+        List<OITB> getGrupoArticulo(int codigogrupo);
+
+        [OperationContract]
         [WebInvoke(UriTemplate = "?method=getPrecios&itemCode={itemCode}",
     BodyStyle = WebMessageBodyStyle.Bare,
     ResponseFormat = WebMessageFormat.Json,

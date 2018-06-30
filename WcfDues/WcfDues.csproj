@@ -170,6 +170,9 @@
     <Compile Include="OCRD.cs">
       <DependentUpon>Sap.tt</DependentUpon>
     </Compile>
+    <Compile Include="OITB.cs">
+      <DependentUpon>Sap.tt</DependentUpon>
+    </Compile>
     <Compile Include="OITM.cs">
       <DependentUpon>Sap.tt</DependentUpon>
     </Compile>

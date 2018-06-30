@@ -30,5 +30,6 @@ namespace WcfDues
         public virtual DbSet<OWHS> OWHS { get; set; }
         public virtual DbSet<ITM1> ITM1 { get; set; }
         public virtual DbSet<OCRD> OCRD { get; set; }
+        public virtual DbSet<OITB> OITB { get; set; }
     }
 }

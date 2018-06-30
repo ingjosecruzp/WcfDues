@@ -18,9 +18,17 @@ namespace WcfDues
         ResponseFormat = WebMessageFormat.Json,
         RequestFormat = WebMessageFormat.Json,
         Method = "GET")]
-        List<String> Login(string usuario,string password);
+        List<String> Login(string usuario, string password);
 
-       [OperationContract]
+        [OperationContract]
+        [WebInvoke(UriTemplate = "?method=getId&usuario={usuario}&password={password}",
+        BodyStyle = WebMessageBodyStyle.WrappedRequest,
+        ResponseFormat = WebMessageFormat.Json,
+        RequestFormat = WebMessageFormat.Json,
+        Method = "GET")]
+        String getId(string usuario, string password);
+
+        [OperationContract]
        [WebInvoke(UriTemplate = "?method=socket",
         BodyStyle = WebMessageBodyStyle.WrappedRequest,
         ResponseFormat = WebMessageFormat.Json,

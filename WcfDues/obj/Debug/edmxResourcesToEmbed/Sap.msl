@@ -956,5 +956,92 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="OITB">
+      <EntityTypeMapping TypeName="SapModel.OITB">
+        <MappingFragment StoreEntitySet="OITB">
+          <ScalarProperty Name="FreeChrgPU" ColumnName="FreeChrgPU" />
+          <ScalarProperty Name="FreeChrgSA" ColumnName="FreeChrgSA" />
+          <ScalarProperty Name="CompoWH" ColumnName="CompoWH" />
+          <ScalarProperty Name="RuleCode" ColumnName="RuleCode" />
+          <ScalarProperty Name="ToleranDay" ColumnName="ToleranDay" />
+          <ScalarProperty Name="IUoMEntry" ColumnName="IUoMEntry" />
+          <ScalarProperty Name="UgpEntry" ColumnName="UgpEntry" />
+          <ScalarProperty Name="StockOffst" ColumnName="StockOffst" />
+          <ScalarProperty Name="WipOffset" ColumnName="WipOffset" />
+          <ScalarProperty Name="WhOCenAct" ColumnName="WhOCenAct" />
+          <ScalarProperty Name="WhICenAct" ColumnName="WhICenAct" />
+          <ScalarProperty Name="PurBalAct" ColumnName="PurBalAct" />
+          <ScalarProperty Name="StkInTnAct" ColumnName="StkInTnAct" />
+          <ScalarProperty Name="NegStckAct" ColumnName="NegStckAct" />
+          <ScalarProperty Name="ProductSrc" ColumnName="ProductSrc" />
+          <ScalarProperty Name="MatGrp" ColumnName="MatGrp" />
+          <ScalarProperty Name="MatType" ColumnName="MatType" />
+          <ScalarProperty Name="NCMCode" ColumnName="NCMCode" />
+          <ScalarProperty Name="ServiceGrp" ColumnName="ServiceGrp" />
+          <ScalarProperty Name="ISvcCode" ColumnName="ISvcCode" />
+          <ScalarProperty Name="OSvcCode" ColumnName="OSvcCode" />
+          <ScalarProperty Name="ItemClass" ColumnName="ItemClass" />
+          <ScalarProperty Name="RevRetAct" ColumnName="RevRetAct" />
+          <ScalarProperty Name="APCMEUAct" ColumnName="APCMEUAct" />
+          <ScalarProperty Name="APCMFrnAct" ColumnName="APCMFrnAct" />
+          <ScalarProperty Name="APCMAct" ColumnName="APCMAct" />
+          <ScalarProperty Name="ARCMExpAct" ColumnName="ARCMExpAct" />
+          <ScalarProperty Name="ARCMEUAct" ColumnName="ARCMEUAct" />
+          <ScalarProperty Name="ARCMFrnAct" ColumnName="ARCMFrnAct" />
+          <ScalarProperty Name="ARCMAct" ColumnName="ARCMAct" />
+          <ScalarProperty Name="updateDate" ColumnName="updateDate" />
+          <ScalarProperty Name="userSign2" ColumnName="userSign2" />
+          <ScalarProperty Name="createDate" ColumnName="createDate" />
+          <ScalarProperty Name="logInstanc" ColumnName="logInstanc" />
+          <ScalarProperty Name="Object" ColumnName="Object" />
+          <ScalarProperty Name="ExpOfstAct" ColumnName="ExpOfstAct" />
+          <ScalarProperty Name="ExpClrAct" ColumnName="ExpClrAct" />
+          <ScalarProperty Name="CstOffsAct" ColumnName="CstOffsAct" />
+          <ScalarProperty Name="CostRvlAct" ColumnName="CostRvlAct" />
+          <ScalarProperty Name="WipVarAcct" ColumnName="WipVarAcct" />
+          <ScalarProperty Name="WipAcct" ColumnName="WipAcct" />
+          <ScalarProperty Name="StkOffsAct" ColumnName="StkOffsAct" />
+          <ScalarProperty Name="StokRvlAct" ColumnName="StokRvlAct" />
+          <ScalarProperty Name="LeadTime" ColumnName="LeadTime" />
+          <ScalarProperty Name="MinOrdrQty" ColumnName="MinOrdrQty" />
+          <ScalarProperty Name="OrdrMulti" ColumnName="OrdrMulti" />
+          <ScalarProperty Name="OrdrIntrvl" ColumnName="OrdrIntrvl" />
+          <ScalarProperty Name="PrcrmntMtd" ColumnName="PrcrmntMtd" />
+          <ScalarProperty Name="PlaningSys" ColumnName="PlaningSys" />
+          <ScalarProperty Name="InvntSys" ColumnName="InvntSys" />
+          <ScalarProperty Name="IncresGlAc" ColumnName="IncresGlAc" />
+          <ScalarProperty Name="DecresGlAc" ColumnName="DecresGlAc" />
+          <ScalarProperty Name="VatRevAct" ColumnName="VatRevAct" />
+          <ScalarProperty Name="ShpdGdsAct" ColumnName="ShpdGdsAct" />
+          <ScalarProperty Name="PurchOfsAc" ColumnName="PurchOfsAc" />
+          <ScalarProperty Name="PAReturnAc" ColumnName="PAReturnAc" />
+          <ScalarProperty Name="PurchaseAc" ColumnName="PurchaseAc" />
+          <ScalarProperty Name="BalanceAcc" ColumnName="BalanceAcc" />
+          <ScalarProperty Name="ExchangeAc" ColumnName="ExchangeAc" />
+          <ScalarProperty Name="PriceDifAc" ColumnName="PriceDifAc" />
+          <ScalarProperty Name="Alert" ColumnName="Alert" />
+          <ScalarProperty Name="CycleCode" ColumnName="CycleCode" />
+          <ScalarProperty Name="ExmptIncom" ColumnName="ExmptIncom" />
+          <ScalarProperty Name="FrExpensAc" ColumnName="FrExpensAc" />
+          <ScalarProperty Name="FrRevenuAc" ColumnName="FrRevenuAc" />
+          <ScalarProperty Name="EUExpensAc" ColumnName="EUExpensAc" />
+          <ScalarProperty Name="EURevenuAc" ColumnName="EURevenuAc" />
+          <ScalarProperty Name="ExpensesAc" ColumnName="ExpensesAc" />
+          <ScalarProperty Name="ReturnAc" ColumnName="ReturnAc" />
+          <ScalarProperty Name="IncreasAc" ColumnName="IncreasAc" />
+          <ScalarProperty Name="DecreasAc" ColumnName="DecreasAc" />
+          <ScalarProperty Name="VarianceAc" ColumnName="VarianceAc" />
+          <ScalarProperty Name="RevenuesAc" ColumnName="RevenuesAc" />
+          <ScalarProperty Name="TransferAc" ColumnName="TransferAc" />
+          <ScalarProperty Name="SaleCostAc" ColumnName="SaleCostAc" />
+          <ScalarProperty Name="BalInvntAc" ColumnName="BalInvntAc" />
+          <ScalarProperty Name="UserSign" ColumnName="UserSign" />
+          <ScalarProperty Name="DataSource" ColumnName="DataSource" />
+          <ScalarProperty Name="Locked" ColumnName="Locked" />
+          <ScalarProperty Name="ItmsGrpNam" ColumnName="ItmsGrpNam" />
+          <ScalarProperty Name="ItmsGrpCod" ColumnName="ItmsGrpCod" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

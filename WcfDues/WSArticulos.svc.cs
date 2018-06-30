@@ -133,6 +133,29 @@ namespace WcfDues
             }
         }
 
+        public List<OITB> getGrupoArticulo(int codigogrupo)
+        {
+            try
+            {
+                SapEntities db = new SapEntities();
+
+
+                List<OITB> nombreGrupo = null;
+
+                nombreGrupo = db.OITB.Where(p => p.ItmsGrpCod == codigogrupo).OrderBy(o => o.ItmsGrpCod).ToList();
+
+
+                return nombreGrupo;
+            }
+            catch (Exception ex)
+            {
+
+
+                Error(ex, "El articulo");
+                return null;
+            }
+        }
+
         public List<ITM1> getPrecios(String itemCode)
         {
 

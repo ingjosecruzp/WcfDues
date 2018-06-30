@@ -4,12 +4,13 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="99fb8d1f16144acd9aee1946937bfed6" Name="Diagram1" ZoomLevel="72">
+      <Diagram DiagramId="99fb8d1f16144acd9aee1946937bfed6" Name="Diagram1" ZoomLevel="10">
         <EntityTypeShape EntityType="SapModel.OITM" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="SapModel.OITW" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="SapModel.OWHS" Width="1.5" PointX="6.375" PointY="0.75" />
         <EntityTypeShape EntityType="SapModel.ITM1" Width="1.5" PointX="8.375" PointY="0.75" />
         <EntityTypeShape EntityType="SapModel.OCRD" Width="1.5" PointX="8.375" PointY="5.75" />
+        <EntityTypeShape EntityType="SapModel.OITB" Width="1.5" PointX="10.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

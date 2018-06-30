@@ -1,9 +1,10 @@
-app.controller("InventarioActualController", ['$scope','$window','$location','$uibModal','Inventario','inventario_aplicado','uiGridGroupingConstants','$q', function($scope,$window,$location,$uibModal,Inventario,inventario_aplicado,uiGridGroupingConstants,$q) { 
+app.controller("InventarioActualController", ['$scope','$window','$location','$uibModal','Inventario','inventario_aplicado','uiGridGroupingConstants','$q','i18nService', function($scope,$window,$location,$uibModal,Inventario,inventario_aplicado,uiGridGroupingConstants,$q,i18nService) { 
     $scope.inventario=[];
     $scope.inventariodetallesgrid=[];
     $scope.usuariosp={};
 
-
+    //Definición del grid
+    i18nService.setCurrentLang('es');
     $scope.gridOptions = {
         enableFiltering: true,
         enableRowSelection: true,
@@ -15,13 +16,15 @@ app.controller("InventarioActualController", ['$scope','$window','$location','$u
         showGridFooter:true,
         columnDefs: [
                 {field: 'ItemCode', displayName:'Codigo SAP',enableCellEdit: false},
-                {field: 'CodeBars', displayName:'Codigo de Barras',enableCellEdit: false},
+                {field: 'Codebars', displayName:'Codigo de Barras',enableCellEdit: false},
                 {field: 'ItemName', displayName: 'Descripcion',enableCellEdit: false},
                 {field: 'Cantidad', displayName: 'Cantidad',type: 'number',treeAggregationType: uiGridGroupingConstants.aggregation.SUM},
                 {field: 'NombreLote', displayName: 'Lote',enableCellEdit: false},
                 {field: 'usuarios.Usuario', displayName: 'Nombre del usuario',enableCellEdit: false}
-        ],  
-      };
+        ],
+        enableGridMenu: true,
+        exporterMenuExcel: false,
+    };
 
       $scope.saveRow = function( rowEntity ) {
         console.log( 'SaveRow called for: ' + rowEntity.id);

@@ -17,15 +17,16 @@ namespace WcfDues
         {
             try
             {
-                inventario documento = new inventario();
-                detalle_inventario detalle = new detalle_inventario();
                 duesEntities db = new duesEntities();
+                /*inventario documento = new inventario();
+                detalle_inventario detalle = new detalle_inventario();
                 documento.detalle_inventario = new List<detalle_inventario>();
                 List<detalle_inventario> products = doc.detalle_inventario.ToList();
 
                 var categories = from p in doc.detalle_inventario.ToList() group p by p.ItemCode into g select new { itemcode = g.Key, cantidad = g.Sum(p => p.Cantidad), nombre = g.Select(o => o.ItemName).FirstOrDefault() };
 
                 documento.FechaInicio = DateTime.Now;
+                documento.Estado = "ACTIVO";
              //   documento.UsuarioId = 1;
 
                 foreach (var cat in categories)
@@ -40,10 +41,16 @@ namespace WcfDues
                        // UsuarioId = 1
                     });
 
-                }
-                  
+                }*/
 
-            db.inventario.Add(doc);
+                doc.FechaInicio = DateTime.Now;
+                doc.Estado = "ACTIVO";
+                foreach (detalle_inventario detalle in doc.detalle_inventario)
+                {
+                    detalle.inventario = null;
+                }
+
+                    db.inventario.Add(doc);
             db.SaveChanges();
 
             return doc;
