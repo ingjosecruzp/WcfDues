@@ -33,6 +33,12 @@
       <End Role="usuarios" EntitySet="usuarios" />
       <End Role="inventario" EntitySet="inventario" />
     </AssociationSet>
+    <EntitySet Name="detalle_diferencias" EntityType="duesModel.detalle_diferencias" />
+    <EntitySet Name="diferencias" EntityType="duesModel.diferencias" />
+    <AssociationSet Name="diferencia_detalle" Association="duesModel.diferencia_detalle">
+      <End Role="diferencias" EntitySet="diferencias" />
+      <End Role="detalle_diferencias" EntitySet="detalle_diferencias" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="clientes">
     <Key>
@@ -62,7 +68,7 @@
     <Property Name="ItemCode" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
     <Property Name="ItemName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
     <Property Name="Codebars" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-    <Property Name="Cantidad" Type="Int32" Nullable="false" />
+    <Property Name="Cantidad" Type="Decimal" Nullable="false" />
     <Property Name="NombreLote" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
     <Property Name="PicturName" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
     <Property Name="FechaHora" Type="DateTime" Nullable="false" />
@@ -79,7 +85,7 @@
     <Property Name="ItemCode" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
     <Property Name="ItemName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
     <Property Name="Codebars" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-    <Property Name="Cantidad" Type="Int32" Nullable="false" />
+    <Property Name="Cantidad" Type="Decimal" Nullable="false" />
     <Property Name="NombreLote" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
     <Property Name="PicturName" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
     <Property Name="FechaHora" Type="DateTime" Nullable="false" />
@@ -129,6 +135,7 @@
     <NavigationProperty Name="detalle_inventario" Relationship="duesModel.detalle_inventario_ibfk_2" FromRole="usuarios" ToRole="detalle_inventario" />
     <NavigationProperty Name="detalle_inventario_aplicado" Relationship="duesModel.detalle_inventario_aplicado_ibfk_1" FromRole="usuarios" ToRole="detalle_inventario_aplicado" />
     <NavigationProperty Name="inventario" Relationship="duesModel.inventario_ibfk_1" FromRole="usuarios" ToRole="inventario" />
+    <Property Name="Tipo" Type="Int32" Nullable="false" />
   </EntityType>
   <Association Name="ClientesColonias">
     <End Type="duesModel.colonias" Role="colonias" Multiplicity="0..1" />
@@ -199,6 +206,41 @@
       </Principal>
       <Dependent Role="inventario">
         <PropertyRef Name="UsuarioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="detalle_diferencias">
+    <Key>
+      <PropertyRef Name="idDetalle_Diferencias" />
+    </Key>
+    <Property Name="idDetalle_Diferencias" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ItemCode" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="ItemName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Codebars" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Contado" Type="Decimal" Nullable="false" />
+    <Property Name="Cantidad" Type="Decimal" Nullable="false" />
+    <Property Name="Diferencia" Type="Decimal" Nullable="false" />
+    <Property Name="DiferenciasId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="diferencias" Relationship="duesModel.diferencia_detalle" FromRole="detalle_diferencias" ToRole="diferencias" />
+  </EntityType>
+  <EntityType Name="diferencias">
+    <Key>
+      <PropertyRef Name="idDiferencias" />
+    </Key>
+    <Property Name="idDiferencias" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Fecha" Type="DateTime" Nullable="false" />
+    <Property Name="Estado" Type="String" Nullable="false" MaxLength="65532" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="detalle_diferencias" Relationship="duesModel.diferencia_detalle" FromRole="diferencias" ToRole="detalle_diferencias" />
+  </EntityType>
+  <Association Name="diferencia_detalle">
+    <End Type="duesModel.diferencias" Role="diferencias" Multiplicity="1" />
+    <End Type="duesModel.detalle_diferencias" Role="detalle_diferencias" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="diferencias">
+        <PropertyRef Name="idDiferencias" />
+      </Principal>
+      <Dependent Role="detalle_diferencias">
+        <PropertyRef Name="DiferenciasId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

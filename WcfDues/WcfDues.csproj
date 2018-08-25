@@ -124,10 +124,16 @@
     <Compile Include="colonias.cs">
       <DependentUpon>Empresa.tt</DependentUpon>
     </Compile>
+    <Compile Include="detalle_diferencias.cs">
+      <DependentUpon>Empresa.tt</DependentUpon>
+    </Compile>
     <Compile Include="detalle_inventario.cs">
       <DependentUpon>Empresa.tt</DependentUpon>
     </Compile>
     <Compile Include="detalle_inventario_aplicado.cs">
+      <DependentUpon>Empresa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="diferencias.cs">
       <DependentUpon>Empresa.tt</DependentUpon>
     </Compile>
     <Compile Include="Empresa.Context.cs">
@@ -177,6 +183,9 @@
       <DependentUpon>Sap.tt</DependentUpon>
     </Compile>
     <Compile Include="OITW.cs">
+      <DependentUpon>Sap.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OPLN.cs">
       <DependentUpon>Sap.tt</DependentUpon>
     </Compile>
     <Compile Include="OWHS.cs">

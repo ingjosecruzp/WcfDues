@@ -84,5 +84,13 @@ namespace WcfDues
             RequestFormat = WebMessageFormat.Json,
             Method = "GET")]
         List<OITW> getDetalleAlmacen(string itemCode, string whsCode);
+
+        [OperationContract]
+        [WebInvoke(UriTemplate = "?method=getListName&CardCode={cardCode}",
+            BodyStyle = WebMessageBodyStyle.Bare,
+            ResponseFormat = WebMessageFormat.Json,
+            RequestFormat = WebMessageFormat.Json,
+            Method = "GET")]
+        String getListName(string cardCode);
     }
 }

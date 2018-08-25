@@ -932,6 +932,35 @@
     <Property Name="FreeChrgSA" Type="nvarchar" MaxLength="15" />
     <Property Name="FreeChrgPU" Type="nvarchar" MaxLength="15" />
   </EntityType>
+  <EntityType Name="OPLN">
+    <Key>
+      <PropertyRef Name="ListNum" />
+    </Key>
+    <Property Name="ListNum" Type="smallint" Nullable="false" />
+    <Property Name="ListName" Type="nvarchar" MaxLength="32" Nullable="false" />
+    <Property Name="BASE_NUM" Type="smallint" />
+    <Property Name="Factor" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="RoundSys" Type="smallint" />
+    <Property Name="GroupCode" Type="smallint" />
+    <Property Name="DataSource" Type="char" MaxLength="1" />
+    <Property Name="SPPCounter" Type="int" />
+    <Property Name="UserSign" Type="smallint" />
+    <Property Name="IsGrossPrc" Type="char" MaxLength="1" />
+    <Property Name="LogInstanc" Type="int" />
+    <Property Name="UserSign2" Type="smallint" />
+    <Property Name="UpdateDate" Type="datetime" />
+    <Property Name="ValidFor" Type="char" MaxLength="1" />
+    <Property Name="ValidFrom" Type="datetime" />
+    <Property Name="ValidTo" Type="datetime" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="PrimCurr" Type="nvarchar" MaxLength="3" />
+    <Property Name="AddCurr1" Type="nvarchar" MaxLength="3" />
+    <Property Name="AddCurr2" Type="nvarchar" MaxLength="3" />
+    <Property Name="RoundRule" Type="char" MaxLength="1" />
+    <Property Name="ExtAmount" Type="numeric" Precision="19" Scale="6" />
+    <Property Name="RndFrmtInt" Type="nvarchar" MaxLength="10" />
+    <Property Name="RndFrmtDec" Type="nvarchar" MaxLength="10" />
+  </EntityType>
   <EntityType Name="OWHS">
     <Key>
       <PropertyRef Name="WhsCode" />
@@ -1044,6 +1073,7 @@
     <EntitySet Name="OITB" EntityType="Self.OITB" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="OITM" EntityType="Self.OITM" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="OITW" EntityType="Self.OITW" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OPLN" EntityType="Self.OPLN" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="OWHS" EntityType="Self.OWHS" Schema="dbo" store:Type="Tables" />
   </EntityContainer>
 </Schema>

@@ -470,6 +470,7 @@
     <EntitySet Name="ITM1" EntityType="SapModel.ITM1" />
     <EntitySet Name="OCRD" EntityType="SapModel.OCRD" />
     <EntitySet Name="OITB" EntityType="SapModel.OITB" />
+    <EntitySet Name="OPLN" EntityType="SapModel.OPLN" />
   </EntityContainer>
   <EntityType Name="OWHS">
     <Key>
@@ -1045,5 +1046,34 @@
     <Property Name="CompoWH" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
     <Property Name="FreeChrgSA" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
     <Property Name="FreeChrgPU" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="OPLN">
+    <Key>
+      <PropertyRef Name="ListNum" />
+    </Key>
+    <Property Name="ListNum" Type="Int16" Nullable="false" />
+    <Property Name="ListName" Type="String" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Name="BASE_NUM" Type="Int16" />
+    <Property Name="Factor" Type="Decimal" Precision="19" Scale="6" />
+    <Property Name="RoundSys" Type="Int16" />
+    <Property Name="GroupCode" Type="Int16" />
+    <Property Name="DataSource" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="SPPCounter" Type="Int32" />
+    <Property Name="UserSign" Type="Int16" />
+    <Property Name="IsGrossPrc" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="LogInstanc" Type="Int32" />
+    <Property Name="UserSign2" Type="Int16" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+    <Property Name="ValidFor" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ValidFrom" Type="DateTime" Precision="3" />
+    <Property Name="ValidTo" Type="DateTime" Precision="3" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="PrimCurr" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="AddCurr1" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="AddCurr2" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="RoundRule" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ExtAmount" Type="Decimal" Precision="19" Scale="6" />
+    <Property Name="RndFrmtInt" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="RndFrmtDec" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
   </EntityType>
 </Schema>

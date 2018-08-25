@@ -485,5 +485,28 @@ namespace WcfDues
                 return "";
             }
         }
+
+        public String getTipo(string usuario, string password)
+        {
+            List<string> tokens = new List<string>();
+            try
+            {
+                duesEntities db = new duesEntities();
+                usuarios Usuario = db.usuarios.Where(u => u.Usuario == usuario && u.Password == password).SingleOrDefault();
+
+                if (Usuario == null)
+                    throw new Exception("Usuario o contraseña invalidos");
+
+                String tipo = Usuario.Tipo.ToString();
+
+                return tipo;
+            }
+            catch (Exception ex)
+            {
+                Error(ex, "El usuario");
+                tokens.Add("");
+                return "";
+            }
+        }
     }
 }

@@ -12,20 +12,17 @@ namespace WcfDues
     using System;
     using System.Collections.Generic;
     
-    public partial class detalle_inventario
+    public partial class detalle_diferencias
     {
-        public int idDetalle_Inventario { get; set; }
+        public int idDetalle_Diferencias { get; set; }
         public string ItemCode { get; set; }
         public string ItemName { get; set; }
         public string Codebars { get; set; }
+        public decimal Contado { get; set; }
         public decimal Cantidad { get; set; }
-        public string NombreLote { get; set; }
-        public string PicturName { get; set; }
-        public System.DateTime FechaHora { get; set; }
-        public int InventarioId { get; set; }
-        public int UsuarioId { get; set; }
+        public decimal Diferencia { get; set; }
+        public int DiferenciasId { get; set; }
     
-        public virtual inventario inventario { get; set; }
-        public virtual usuarios usuarios { get; set; }
+        public virtual diferencias diferencias { get; set; }
     }
 }

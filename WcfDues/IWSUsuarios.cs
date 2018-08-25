@@ -29,6 +29,14 @@ namespace WcfDues
         String getId(string usuario, string password);
 
         [OperationContract]
+        [WebInvoke(UriTemplate = "?method=getTipo&usuario={usuario}&password={password}",
+        BodyStyle = WebMessageBodyStyle.WrappedRequest,
+        ResponseFormat = WebMessageFormat.Json,
+        RequestFormat = WebMessageFormat.Json,
+        Method = "GET")]
+        String getTipo(string usuario, string password);
+
+        [OperationContract]
        [WebInvoke(UriTemplate = "?method=socket",
         BodyStyle = WebMessageBodyStyle.WrappedRequest,
         ResponseFormat = WebMessageFormat.Json,

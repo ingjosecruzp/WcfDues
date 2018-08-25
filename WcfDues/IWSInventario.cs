@@ -22,19 +22,35 @@ namespace WcfDues
 
 
         [OperationContract]
-        [WebInvoke(UriTemplate = "?method=getInventarioActual",
+        [WebInvoke(UriTemplate = "?method=getInventarioActual&id={id}",
         BodyStyle = WebMessageBodyStyle.WrappedRequest,
         ResponseFormat = WebMessageFormat.Json,
         RequestFormat = WebMessageFormat.Json,
         Method = "GET")]
-        List<inventario> getInventarioActual();
+        List<WSInventario.nInv> getInventarioActual(string id);
 
         [OperationContract]
-        [WebInvoke(UriTemplate = "?method=getInventarioActualDetalles&id={id}", 
+        [WebInvoke(UriTemplate = "?method=getInventarioActualDetalles&id={id}",
         BodyStyle = WebMessageBodyStyle.WrappedRequest,
         ResponseFormat = WebMessageFormat.Json,
         RequestFormat = WebMessageFormat.Json,
         Method = "GET")]
         List<detalle_inventario> getInventarioActualDetalles(string id);
+
+        [OperationContract]
+        [WebInvoke(UriTemplate = "?method=updateDetalleInventario&id={id}&cantidad={cantidad}",
+        BodyStyle = WebMessageBodyStyle.WrappedRequest,
+        ResponseFormat = WebMessageFormat.Json,
+        RequestFormat = WebMessageFormat.Json,
+        Method = "GET")]
+        String updateDetalleInventario(string id, string cantidad);
+
+        [OperationContract]
+        [WebInvoke(UriTemplate = "?method=saveDiferencias&inventario={inventario}&diferencia={diferencia}",
+        BodyStyle = WebMessageBodyStyle.WrappedRequest,
+        ResponseFormat = WebMessageFormat.Json,
+        RequestFormat = WebMessageFormat.Json,
+        Method = "GET")]
+        String saveDiferencias(string inventario, string diferencia);
     }
 }

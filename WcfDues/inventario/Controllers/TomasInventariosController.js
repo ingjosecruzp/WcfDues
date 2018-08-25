@@ -1,4 +1,4 @@
-app.controller("TomasInventariosController", ['$scope','$window','Inventario','GridInventario','$uibModalInstance', function($scope,$window,Inventario,GridInventario,$uibModalInstance) { 
+app.controller("TomasInventariosController", ['$scope','$window','Inventario','GridInventario','$uibModalInstance','$rootScope', function($scope,$window,Inventario,GridInventario,$uibModalInstance,$rootScope) { 
     var data=[];
     var data2=[];
     var inventarioseleccionados=[];
@@ -11,8 +11,8 @@ app.controller("TomasInventariosController", ['$scope','$window','Inventario','G
         columnDefs: [
                 {field: 'idInventario', displayName:'Id'},
                 {field: 'FechaInicio', displayName: 'Fecha Inicio'},
-                {field: 'UsuarioId', displayName: 'Usuario'},
-                {name: 'UUID', displayName: 'UUID'}
+                {field: 'Usuario', displayName: 'Usuario'},
+                {field: 'UUID', displayName: 'UUID'}
         ],
         onRegisterApi: function (gridApi) {
             $scope.gridOptions.gridApi = gridApi;
@@ -28,7 +28,7 @@ app.controller("TomasInventariosController", ['$scope','$window','Inventario','G
       };
 
     
-    Inventario.query({method:'getInventarioActual'}, function(response) { 
+    Inventario.query({method:'getInventarioActual',id:$rootScope.agregados.toString()}, function(response) { 
         
         console.log(response.data)
         $scope.gridOptions.data=response.data;

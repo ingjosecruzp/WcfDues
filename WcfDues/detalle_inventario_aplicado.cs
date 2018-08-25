@@ -18,7 +18,7 @@ namespace WcfDues
         public string ItemCode { get; set; }
         public string ItemName { get; set; }
         public string Codebars { get; set; }
-        public int Cantidad { get; set; }
+        public decimal Cantidad { get; set; }
         public string NombreLote { get; set; }
         public string PicturName { get; set; }
         public System.DateTime FechaHora { get; set; }

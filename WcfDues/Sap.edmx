@@ -937,6 +937,35 @@
           <Property Name="FreeChrgSA" Type="nvarchar" MaxLength="15" />
           <Property Name="FreeChrgPU" Type="nvarchar" MaxLength="15" />
         </EntityType>
+        <EntityType Name="OPLN">
+          <Key>
+            <PropertyRef Name="ListNum" />
+          </Key>
+          <Property Name="ListNum" Type="smallint" Nullable="false" />
+          <Property Name="ListName" Type="nvarchar" MaxLength="32" Nullable="false" />
+          <Property Name="BASE_NUM" Type="smallint" />
+          <Property Name="Factor" Type="numeric" Precision="19" Scale="6" />
+          <Property Name="RoundSys" Type="smallint" />
+          <Property Name="GroupCode" Type="smallint" />
+          <Property Name="DataSource" Type="char" MaxLength="1" />
+          <Property Name="SPPCounter" Type="int" />
+          <Property Name="UserSign" Type="smallint" />
+          <Property Name="IsGrossPrc" Type="char" MaxLength="1" />
+          <Property Name="LogInstanc" Type="int" />
+          <Property Name="UserSign2" Type="smallint" />
+          <Property Name="UpdateDate" Type="datetime" />
+          <Property Name="ValidFor" Type="char" MaxLength="1" />
+          <Property Name="ValidFrom" Type="datetime" />
+          <Property Name="ValidTo" Type="datetime" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="PrimCurr" Type="nvarchar" MaxLength="3" />
+          <Property Name="AddCurr1" Type="nvarchar" MaxLength="3" />
+          <Property Name="AddCurr2" Type="nvarchar" MaxLength="3" />
+          <Property Name="RoundRule" Type="char" MaxLength="1" />
+          <Property Name="ExtAmount" Type="numeric" Precision="19" Scale="6" />
+          <Property Name="RndFrmtInt" Type="nvarchar" MaxLength="10" />
+          <Property Name="RndFrmtDec" Type="nvarchar" MaxLength="10" />
+        </EntityType>
         <EntityType Name="OWHS">
           <Key>
             <PropertyRef Name="WhsCode" />
@@ -1049,6 +1078,7 @@
           <EntitySet Name="OITB" EntityType="Self.OITB" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="OITM" EntityType="Self.OITM" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="OITW" EntityType="Self.OITW" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OPLN" EntityType="Self.OPLN" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="OWHS" EntityType="Self.OWHS" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -1525,6 +1555,7 @@
           <EntitySet Name="ITM1" EntityType="SapModel.ITM1" />
           <EntitySet Name="OCRD" EntityType="SapModel.OCRD" />
           <EntitySet Name="OITB" EntityType="SapModel.OITB" />
+          <EntitySet Name="OPLN" EntityType="SapModel.OPLN" />
         </EntityContainer>
         <EntityType Name="OWHS">
           <Key>
@@ -2100,6 +2131,35 @@
           <Property Name="CompoWH" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
           <Property Name="FreeChrgSA" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
           <Property Name="FreeChrgPU" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="OPLN">
+          <Key>
+            <PropertyRef Name="ListNum" />
+          </Key>
+          <Property Name="ListNum" Type="Int16" Nullable="false" />
+          <Property Name="ListName" Type="String" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="BASE_NUM" Type="Int16" />
+          <Property Name="Factor" Type="Decimal" Precision="19" Scale="6" />
+          <Property Name="RoundSys" Type="Int16" />
+          <Property Name="GroupCode" Type="Int16" />
+          <Property Name="DataSource" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="SPPCounter" Type="Int32" />
+          <Property Name="UserSign" Type="Int16" />
+          <Property Name="IsGrossPrc" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="LogInstanc" Type="Int32" />
+          <Property Name="UserSign2" Type="Int16" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+          <Property Name="ValidFor" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="ValidFrom" Type="DateTime" Precision="3" />
+          <Property Name="ValidTo" Type="DateTime" Precision="3" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="PrimCurr" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="AddCurr1" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="AddCurr2" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="RoundRule" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="ExtAmount" Type="Decimal" Precision="19" Scale="6" />
+          <Property Name="RndFrmtInt" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="RndFrmtDec" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -3146,6 +3206,36 @@
                 <ScalarProperty Name="Locked" ColumnName="Locked" />
                 <ScalarProperty Name="ItmsGrpNam" ColumnName="ItmsGrpNam" />
                 <ScalarProperty Name="ItmsGrpCod" ColumnName="ItmsGrpCod" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OPLN">
+            <EntityTypeMapping TypeName="SapModel.OPLN">
+              <MappingFragment StoreEntitySet="OPLN">
+                <ScalarProperty Name="RndFrmtDec" ColumnName="RndFrmtDec" />
+                <ScalarProperty Name="RndFrmtInt" ColumnName="RndFrmtInt" />
+                <ScalarProperty Name="ExtAmount" ColumnName="ExtAmount" />
+                <ScalarProperty Name="RoundRule" ColumnName="RoundRule" />
+                <ScalarProperty Name="AddCurr2" ColumnName="AddCurr2" />
+                <ScalarProperty Name="AddCurr1" ColumnName="AddCurr1" />
+                <ScalarProperty Name="PrimCurr" ColumnName="PrimCurr" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="ValidTo" ColumnName="ValidTo" />
+                <ScalarProperty Name="ValidFrom" ColumnName="ValidFrom" />
+                <ScalarProperty Name="ValidFor" ColumnName="ValidFor" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="UserSign2" ColumnName="UserSign2" />
+                <ScalarProperty Name="LogInstanc" ColumnName="LogInstanc" />
+                <ScalarProperty Name="IsGrossPrc" ColumnName="IsGrossPrc" />
+                <ScalarProperty Name="UserSign" ColumnName="UserSign" />
+                <ScalarProperty Name="SPPCounter" ColumnName="SPPCounter" />
+                <ScalarProperty Name="DataSource" ColumnName="DataSource" />
+                <ScalarProperty Name="GroupCode" ColumnName="GroupCode" />
+                <ScalarProperty Name="RoundSys" ColumnName="RoundSys" />
+                <ScalarProperty Name="Factor" ColumnName="Factor" />
+                <ScalarProperty Name="BASE_NUM" ColumnName="BASE_NUM" />
+                <ScalarProperty Name="ListName" ColumnName="ListName" />
+                <ScalarProperty Name="ListNum" ColumnName="ListNum" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

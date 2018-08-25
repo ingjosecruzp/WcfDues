@@ -28,7 +28,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/22/2018 16:01:02</publishTime>
     </File>
     <File Include="bin/WcfDues.dll">
-      <publishTime>06/30/2018 13:45:27</publishTime>
+      <publishTime>07/25/2018 12:54:49</publishTime>
     </File>
     <File Include="Empresa.edmx.diagram">
       <publishTime>05/22/2018 16:00:35</publishTime>
@@ -37,13 +37,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Sap.edmx.diagram">
-      <publishTime>06/22/2018 21:40:13</publishTime>
+      <publishTime>07/16/2018 09:41:06</publishTime>
     </File>
     <File Include="Service1.svc">
       <publishTime>05/22/2018 16:00:35</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>06/30/2018 13:45:32</publishTime>
+      <publishTime>07/17/2018 09:38:33</publishTime>
     </File>
     <File Include="WSArticulos.svc">
       <publishTime>05/22/2018 16:00:35</publishTime>

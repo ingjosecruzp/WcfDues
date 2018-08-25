@@ -51,5 +51,7 @@ namespace WcfDues
         public virtual DbSet<inventario_aplicado> inventario_aplicado { get; set; }
         public virtual DbSet<tokens> tokens { get; set; }
         public virtual DbSet<usuarios> usuarios { get; set; }
+        public virtual DbSet<detalle_diferencias> detalle_diferencias { get; set; }
+        public virtual DbSet<diferencias> diferencias { get; set; }
     }
 }

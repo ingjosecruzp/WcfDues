@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\eguerra\Documents\Visual Studio 2015\Projects\WcfDues\WcfDues\Empresa.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\Federico\Documents\GitHub\WcfDues\WcfDues\Empresa.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

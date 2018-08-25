@@ -34,6 +34,10 @@ app.config(function($routeProvider,$httpProvider) {
     .when("/inventarioactual", {
         templateUrl : "Views/InventarioActual.html",
         controller  : "InventarioActualController"
+    })
+    .when("/diferencias", {
+        templateUrl : "Views/Diferencias.html",
+        controller  : "DiferenciasController"
     });
 });
 

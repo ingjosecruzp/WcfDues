@@ -223,5 +223,28 @@ namespace WcfDues
                 return null;
             }
         }
+
+        public String getListName(String cardCode)
+        {
+
+            try
+            {
+                SapEntities db = new SapEntities();
+                List<OCRD> ocrdList = db.OCRD.Where(p => p.CardCode == cardCode).ToList();
+                OCRD FirstOCRD = ocrdList.ElementAt(0);
+                int ListNum = (int) FirstOCRD.ListNum;
+
+                List<OPLN> oplnList = db.OPLN.Where(p => p.ListNum == ListNum).ToList();
+                OPLN FirstOPLN = oplnList.ElementAt(0);
+                String ListName = FirstOPLN.ListName;
+
+                return ListName;
+            }
+            catch (Exception ex)
+            {
+                Error(ex, "El articulo");
+                return null;
+            }
+        }
     }
 }

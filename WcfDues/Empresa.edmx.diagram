@@ -19,6 +19,9 @@
         <AssociationConnector Association="duesModel.detalle_inventario_aplicado_ibfk_1" />
         <AssociationConnector Association="duesModel.detalle_inventario_aplicado_ibfk_3" />
         <AssociationConnector Association="duesModel.inventario_ibfk_1" />
+        <EntityTypeShape EntityType="duesModel.detalle_diferencias" Width="1.5" PointX="9.625" PointY="1" />
+        <EntityTypeShape EntityType="duesModel.diferencias" Width="1.5" PointX="7.375" PointY="1.5" />
+        <AssociationConnector Association="duesModel.diferencia_detalle" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

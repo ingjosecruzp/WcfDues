@@ -86,10 +86,34 @@
     <EntitySetMapping Name="usuarios">
       <EntityTypeMapping TypeName="duesModel.usuarios">
         <MappingFragment StoreEntitySet="usuarios">
+          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
           <ScalarProperty Name="Nombre" ColumnName="Nombre" />
           <ScalarProperty Name="Password" ColumnName="Password" />
           <ScalarProperty Name="Usuario" ColumnName="Usuario" />
           <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="detalle_diferencias">
+      <EntityTypeMapping TypeName="duesModel.detalle_diferencias">
+        <MappingFragment StoreEntitySet="detalle_diferencias">
+          <ScalarProperty Name="DiferenciasId" ColumnName="DiferenciasId" />
+          <ScalarProperty Name="Diferencia" ColumnName="Diferencia" />
+          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+          <ScalarProperty Name="Contado" ColumnName="Contado" />
+          <ScalarProperty Name="Codebars" ColumnName="Codebars" />
+          <ScalarProperty Name="ItemName" ColumnName="ItemName" />
+          <ScalarProperty Name="ItemCode" ColumnName="ItemCode" />
+          <ScalarProperty Name="idDetalle_Diferencias" ColumnName="idDetalle_Diferencias" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="diferencias">
+      <EntityTypeMapping TypeName="duesModel.diferencias">
+        <MappingFragment StoreEntitySet="diferencias">
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="idDiferencias" ColumnName="idDiferencias" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

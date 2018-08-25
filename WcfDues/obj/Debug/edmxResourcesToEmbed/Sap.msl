@@ -1043,5 +1043,35 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="OPLN">
+      <EntityTypeMapping TypeName="SapModel.OPLN">
+        <MappingFragment StoreEntitySet="OPLN">
+          <ScalarProperty Name="RndFrmtDec" ColumnName="RndFrmtDec" />
+          <ScalarProperty Name="RndFrmtInt" ColumnName="RndFrmtInt" />
+          <ScalarProperty Name="ExtAmount" ColumnName="ExtAmount" />
+          <ScalarProperty Name="RoundRule" ColumnName="RoundRule" />
+          <ScalarProperty Name="AddCurr2" ColumnName="AddCurr2" />
+          <ScalarProperty Name="AddCurr1" ColumnName="AddCurr1" />
+          <ScalarProperty Name="PrimCurr" ColumnName="PrimCurr" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="ValidTo" ColumnName="ValidTo" />
+          <ScalarProperty Name="ValidFrom" ColumnName="ValidFrom" />
+          <ScalarProperty Name="ValidFor" ColumnName="ValidFor" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="UserSign2" ColumnName="UserSign2" />
+          <ScalarProperty Name="LogInstanc" ColumnName="LogInstanc" />
+          <ScalarProperty Name="IsGrossPrc" ColumnName="IsGrossPrc" />
+          <ScalarProperty Name="UserSign" ColumnName="UserSign" />
+          <ScalarProperty Name="SPPCounter" ColumnName="SPPCounter" />
+          <ScalarProperty Name="DataSource" ColumnName="DataSource" />
+          <ScalarProperty Name="GroupCode" ColumnName="GroupCode" />
+          <ScalarProperty Name="RoundSys" ColumnName="RoundSys" />
+          <ScalarProperty Name="Factor" ColumnName="Factor" />
+          <ScalarProperty Name="BASE_NUM" ColumnName="BASE_NUM" />
+          <ScalarProperty Name="ListName" ColumnName="ListName" />
+          <ScalarProperty Name="ListNum" ColumnName="ListNum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

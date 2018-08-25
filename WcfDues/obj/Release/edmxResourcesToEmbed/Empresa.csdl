@@ -3,12 +3,36 @@
   <EntityContainer Name="duesEntities" annotation:LazyLoadingEnabled="false">
     <EntitySet Name="clientes" EntityType="duesModel.clientes" />
     <EntitySet Name="colonias" EntityType="duesModel.colonias" />
+    <EntitySet Name="detalle_inventario" EntityType="duesModel.detalle_inventario" />
+    <EntitySet Name="detalle_inventario_aplicado" EntityType="duesModel.detalle_inventario_aplicado" />
+    <EntitySet Name="inventario" EntityType="duesModel.inventario" />
+    <EntitySet Name="inventario_aplicado" EntityType="duesModel.inventario_aplicado" />
+    <EntitySet Name="tokens" EntityType="duesModel.tokens" />
     <EntitySet Name="usuarios" EntityType="duesModel.usuarios" />
     <AssociationSet Name="ClientesColonias" Association="duesModel.ClientesColonias">
       <End Role="colonias" EntitySet="colonias" />
       <End Role="clientes" EntitySet="clientes" />
     </AssociationSet>
-    <EntitySet Name="tokens" EntityType="duesModel.tokens" />
+    <AssociationSet Name="detalle_inventario_ibfk_1" Association="duesModel.detalle_inventario_ibfk_1">
+      <End Role="inventario" EntitySet="inventario" />
+      <End Role="detalle_inventario" EntitySet="detalle_inventario" />
+    </AssociationSet>
+    <AssociationSet Name="detalle_inventario_ibfk_2" Association="duesModel.detalle_inventario_ibfk_2">
+      <End Role="usuarios" EntitySet="usuarios" />
+      <End Role="detalle_inventario" EntitySet="detalle_inventario" />
+    </AssociationSet>
+    <AssociationSet Name="detalle_inventario_aplicado_ibfk_1" Association="duesModel.detalle_inventario_aplicado_ibfk_1">
+      <End Role="usuarios" EntitySet="usuarios" />
+      <End Role="detalle_inventario_aplicado" EntitySet="detalle_inventario_aplicado" />
+    </AssociationSet>
+    <AssociationSet Name="detalle_inventario_aplicado_ibfk_3" Association="duesModel.detalle_inventario_aplicado_ibfk_3">
+      <End Role="inventario_aplicado" EntitySet="inventario_aplicado" />
+      <End Role="detalle_inventario_aplicado" EntitySet="detalle_inventario_aplicado" />
+    </AssociationSet>
+    <AssociationSet Name="inventario_ibfk_1" Association="duesModel.inventario_ibfk_1">
+      <End Role="usuarios" EntitySet="usuarios" />
+      <End Role="inventario" EntitySet="inventario" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="clientes">
     <Key>
@@ -30,6 +54,70 @@
     <Property Name="Nombre" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="clientes" Relationship="duesModel.ClientesColonias" FromRole="colonias" ToRole="clientes" />
   </EntityType>
+  <EntityType Name="detalle_inventario">
+    <Key>
+      <PropertyRef Name="idDetalle_Inventario" />
+    </Key>
+    <Property Name="idDetalle_Inventario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ItemCode" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="ItemName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Codebars" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Cantidad" Type="Decimal" Nullable="false" />
+    <Property Name="NombreLote" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="PicturName" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="FechaHora" Type="DateTime" Nullable="false" />
+    <Property Name="InventarioId" Type="Int32" Nullable="false" />
+    <Property Name="UsuarioId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="inventario" Relationship="duesModel.detalle_inventario_ibfk_1" FromRole="detalle_inventario" ToRole="inventario" />
+    <NavigationProperty Name="usuarios" Relationship="duesModel.detalle_inventario_ibfk_2" FromRole="detalle_inventario" ToRole="usuarios" />
+  </EntityType>
+  <EntityType Name="detalle_inventario_aplicado">
+    <Key>
+      <PropertyRef Name="idDetalle_Inventario" />
+    </Key>
+    <Property Name="idDetalle_Inventario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ItemCode" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="ItemName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Codebars" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Cantidad" Type="Decimal" Nullable="false" />
+    <Property Name="NombreLote" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="PicturName" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="FechaHora" Type="DateTime" Nullable="false" />
+    <Property Name="InventarioId" Type="Int32" Nullable="false" />
+    <Property Name="UsuarioId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="usuarios" Relationship="duesModel.detalle_inventario_aplicado_ibfk_1" FromRole="detalle_inventario_aplicado" ToRole="usuarios" />
+    <NavigationProperty Name="inventario_aplicado" Relationship="duesModel.detalle_inventario_aplicado_ibfk_3" FromRole="detalle_inventario_aplicado" ToRole="inventario_aplicado" />
+  </EntityType>
+  <EntityType Name="inventario">
+    <Key>
+      <PropertyRef Name="idInventario" />
+    </Key>
+    <Property Name="idInventario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FechaInicio" Type="DateTime" Nullable="false" />
+    <Property Name="UsuarioId" Type="Int32" Nullable="false" />
+    <Property Name="UUID" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="Modelo" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Estado" Type="String" Nullable="false" MaxLength="65532" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="detalle_inventario" Relationship="duesModel.detalle_inventario_ibfk_1" FromRole="inventario" ToRole="detalle_inventario" />
+    <NavigationProperty Name="usuarios" Relationship="duesModel.inventario_ibfk_1" FromRole="inventario" ToRole="usuarios" />
+  </EntityType>
+  <EntityType Name="inventario_aplicado">
+    <Key>
+      <PropertyRef Name="idInventario" />
+    </Key>
+    <Property Name="idInventario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FechaInicio" Type="DateTime" Nullable="false" />
+    <Property Name="UsuarioId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="detalle_inventario_aplicado" Relationship="duesModel.detalle_inventario_aplicado_ibfk_3" FromRole="inventario_aplicado" ToRole="detalle_inventario_aplicado" />
+  </EntityType>
+  <EntityType Name="tokens">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Token" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="FechaUltimaModificacion" Type="DateTime" />
+  </EntityType>
   <EntityType Name="usuarios">
     <Key>
       <PropertyRef Name="Id" />
@@ -37,6 +125,11 @@
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Usuario" Type="String" Nullable="false" MaxLength="8" FixedLength="false" Unicode="false" />
     <Property Name="Password" Type="String" Nullable="false" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="detalle_inventario" Relationship="duesModel.detalle_inventario_ibfk_2" FromRole="usuarios" ToRole="detalle_inventario" />
+    <NavigationProperty Name="detalle_inventario_aplicado" Relationship="duesModel.detalle_inventario_aplicado_ibfk_1" FromRole="usuarios" ToRole="detalle_inventario_aplicado" />
+    <NavigationProperty Name="inventario" Relationship="duesModel.inventario_ibfk_1" FromRole="usuarios" ToRole="inventario" />
+    <Property Name="Tipo" Type="Int32" Nullable="false" />
   </EntityType>
   <Association Name="ClientesColonias">
     <End Type="duesModel.colonias" Role="colonias" Multiplicity="0..1" />
@@ -50,12 +143,64 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityType Name="tokens">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Token" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
-    <Property Name="FechaUltimaModificacion" Type="DateTime" />
-  </EntityType>
+  <Association Name="detalle_inventario_ibfk_1">
+    <End Type="duesModel.inventario" Role="inventario" Multiplicity="1" />
+    <End Type="duesModel.detalle_inventario" Role="detalle_inventario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="inventario">
+        <PropertyRef Name="idInventario" />
+      </Principal>
+      <Dependent Role="detalle_inventario">
+        <PropertyRef Name="InventarioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="detalle_inventario_ibfk_2">
+    <End Type="duesModel.usuarios" Role="usuarios" Multiplicity="1" />
+    <End Type="duesModel.detalle_inventario" Role="detalle_inventario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usuarios">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="detalle_inventario">
+        <PropertyRef Name="UsuarioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="detalle_inventario_aplicado_ibfk_1">
+    <End Type="duesModel.usuarios" Role="usuarios" Multiplicity="1" />
+    <End Type="duesModel.detalle_inventario_aplicado" Role="detalle_inventario_aplicado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usuarios">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="detalle_inventario_aplicado">
+        <PropertyRef Name="UsuarioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="detalle_inventario_aplicado_ibfk_3">
+    <End Type="duesModel.inventario_aplicado" Role="inventario_aplicado" Multiplicity="1" />
+    <End Type="duesModel.detalle_inventario_aplicado" Role="detalle_inventario_aplicado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="inventario_aplicado">
+        <PropertyRef Name="idInventario" />
+      </Principal>
+      <Dependent Role="detalle_inventario_aplicado">
+        <PropertyRef Name="InventarioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="inventario_ibfk_1">
+    <End Type="duesModel.usuarios" Role="usuarios" Multiplicity="1" />
+    <End Type="duesModel.inventario" Role="inventario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usuarios">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="inventario">
+        <PropertyRef Name="UsuarioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>
